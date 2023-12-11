@@ -1,0 +1,196 @@
+main{
+  min-height: 100vh;
+  background: url('/assets/img/day.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 5rem;
+  display: flex;
+}
+
+.navbar{
+  @include background($color: $white, $alpah: 0.2);
+  width: 10%;
+  min-height: 80vh;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0;
+
+  .nav-logo{
+    margin-bottom: 5rem;
+    cursor: pointer;
+    
+    img{
+      width: 5rem;
+    }
+  }
+
+  .nav-links{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .nav-link__item{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      // height: 10rem;
+
+     svg{
+      width: 4.5rem;
+      height: 5rem;
+     }
+
+     .nav-link__text{
+      @include font-xsm(400)
+     }
+    }
+  }
+}
+
+.body{
+  width: 60%;
+
+  // Input field
+  input{
+    width: 100%;
+    height: 4rem;
+    border-radius: 0.7rem;
+    border: none;
+    padding: 0 1rem;
+    @include background($color: $white, $alpah: 0.2);
+    @include font-xsm(500);
+    color: darken($white, 20);
+    // outline: none;
+
+    &:focus{
+      outline: none;
+    }
+    &::placeholder{
+      color: darken($white, 20);
+    }
+  }
+
+  // Current weather info
+  .current-weather-info{
+    // width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .current-weather-info__text{
+      padding: 4rem;
+      .city-name{
+        @include font-md(600, $color: $white);
+      }
+      span p{
+        @include font-xsm(400, $color: darken($white, 20));
+        padding: 1.5rem 0;
+
+      }
+      .current-temp{
+        @include font-lg(700, $color: $white);
+        font-size: 6rem;
+        padding: 2rem 0;
+      }
+    }
+
+    .current-weather-info__icon{
+      width: 25rem;
+    }
+  }
+
+  // Today's forecast
+  .day-forecast{
+    min-height: 25vh;
+    border-radius: 2rem;
+    @include background($color: $white, $alpah: 0.2);
+
+    .day-forecast__text{
+      text-transform: uppercase;
+      letter-spacing: .2rem;
+      @include font-xsm(500, $color: $white);
+      padding: 2rem;
+    }
+
+    .day-forecast__container{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .day-forecast__data{
+      text-align: center;
+      padding-right: 0 2rem;
+      width: 16.7%;
+      
+      &:not(:last-child){
+        border-right: 1px solid white;
+      }
+
+      .day-forecast__time{
+        @include font-xsm(400, $color: $white)
+      }
+
+      .day-forecast__icon{
+        width: 5rem;
+      }
+
+      .day-forecast__temp{
+        @include font-sm(600, $color: $white);
+      }
+      
+    }
+  }
+
+  // Air conditions
+  .air-conditions{
+    min-height: 25vh;
+    border-radius: 2rem;
+    @include background($color: $white, $alpah: 0.2);
+
+    .air-conditions__text {
+      text-transform: uppercase;
+      letter-spacing: .2rem;
+      @include font-xsm(500, $color: $white);
+      padding: 2rem;
+    }
+    
+    .air-conditions__container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .air-conditions__data{
+      .reel-feel, .chance-of-rain{
+        // width: 50%;
+        text-align: center;
+      }
+
+      .reel-feel__info-box, .chance-of-rain__info-box{
+        display: flex;
+        align-items: center;
+      }
+
+      .thermometer__icon, .rain__icon{
+        width: 5rem;
+      }
+
+      .reel-feel__text, .rain__text{
+        @include font-xsm(500, $color: $white);
+      }
+
+      .reel-feel__value, .rain__percentage{
+        @include font-sm(600, $color: $white);
+      }
+    }
+  }
+}

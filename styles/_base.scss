@@ -13,12 +13,18 @@ html{
 
 body{
   font-family: 'Barlow Semi Condensed', sans-serif;
+  // background: url('/assets/img/night.jpg');
+  // background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
 }
 
 // Colors
 $primary: #40C7F7;
 $gray: #9399A2;
 $dark: #161A30;
+$sky: #1B6499;
+$white: #fff;
 
 
 // fonts
@@ -43,15 +49,28 @@ $dark: #161A30;
   color: $color;
 }
 
-p{
-  @include font-lg(600)
+@mixin background($color: $sky, $alpah: 0.4){
+  background: rgba($color, $alpah);
 }
-div{
-  @include font-md(600)
+
+.nav-link__svg-active{
+  fill: $primary;
+  stroke: $primary;
 }
-span{
-  @include font-sm(600)
+
+.nav-link__text-active{
+  color: $primary;
 }
-nav{
-  @include font-xsm(600)
-}
+
+// p{
+//   @include font-lg(600)
+// }
+// div{
+//   @include font-md(600)
+// }
+// span{
+//   @include font-sm(600)
+// }
+// nav{
+//   @include font-xsm(600)
+//}

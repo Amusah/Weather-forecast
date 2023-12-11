@@ -13,26 +13,191 @@ body {
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-p {
-  font-size: 4.8rem;
-  font-weight: 600;
+.nav-link__svg-active {
+  fill: #40C7F7;
+  stroke: #40C7F7;
+}
+
+.nav-link__text-active {
+  color: #40C7F7;
+}
+
+main {
+  min-height: 100vh;
+  background: url("/assets/img/day.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 5rem;
+  display: flex;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.2);
+  width: 10%;
+  min-height: 80vh;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0;
+}
+.navbar .nav-logo {
+  margin-bottom: 5rem;
+  cursor: pointer;
+}
+.navbar .nav-logo img {
+  width: 5rem;
+}
+.navbar .nav-links {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.navbar .nav-links .nav-link__item {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.navbar .nav-links .nav-link__item svg {
+  width: 4.5rem;
+  height: 5rem;
+}
+.navbar .nav-links .nav-link__item .nav-link__text {
+  font-size: 1.8rem;
+  font-weight: 400;
   color: #161A30;
 }
 
-div {
+.body {
+  width: 60%;
+}
+.body input {
+  width: 100%;
+  height: 4rem;
+  border-radius: 0.7rem;
+  border: none;
+  padding: 0 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #161A30;
+  color: #cccccc;
+}
+.body input:focus {
+  outline: none;
+}
+.body input::placeholder {
+  color: #cccccc;
+}
+.body .current-weather-info {
+  display: flex;
+  justify-content: space-between;
+}
+.body .current-weather-info .current-weather-info__text {
+  padding: 4rem;
+}
+.body .current-weather-info .current-weather-info__text .city-name {
   font-size: 3.8rem;
   font-weight: 600;
-  color: #161A30;
+  color: #fff;
 }
-
-span {
+.body .current-weather-info .current-weather-info__text span p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #cccccc;
+  padding: 1.5rem 0;
+}
+.body .current-weather-info .current-weather-info__text .current-temp {
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: #fff;
+  font-size: 6rem;
+  padding: 2rem 0;
+}
+.body .current-weather-info .current-weather-info__icon {
+  width: 25rem;
+}
+.body .day-forecast {
+  min-height: 25vh;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+}
+.body .day-forecast .day-forecast__text {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 2rem;
+}
+.body .day-forecast .day-forecast__container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 2rem;
+}
+.body .day-forecast .day-forecast__data {
+  text-align: center;
+  padding-right: 0 2rem;
+  width: 16.7%;
+}
+.body .day-forecast .day-forecast__data:not(:last-child) {
+  border-right: 1px solid white;
+}
+.body .day-forecast .day-forecast__data .day-forecast__time {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #fff;
+}
+.body .day-forecast .day-forecast__data .day-forecast__icon {
+  width: 5rem;
+}
+.body .day-forecast .day-forecast__data .day-forecast__temp {
   font-size: 2.8rem;
   font-weight: 600;
-  color: #161A30;
+  color: #fff;
 }
-
-nav {
+.body .air-conditions {
+  min-height: 25vh;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+}
+.body .air-conditions .air-conditions__text {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
   font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 2rem;
+}
+.body .air-conditions .air-conditions__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+.body .air-conditions .air-conditions__data .reel-feel, .body .air-conditions .air-conditions__data .chance-of-rain {
+  text-align: center;
+}
+.body .air-conditions .air-conditions__data .reel-feel__info-box, .body .air-conditions .air-conditions__data .chance-of-rain__info-box {
+  display: flex;
+  align-items: center;
+}
+.body .air-conditions .air-conditions__data .thermometer__icon, .body .air-conditions .air-conditions__data .rain__icon {
+  width: 5rem;
+}
+.body .air-conditions .air-conditions__data .reel-feel__text, .body .air-conditions .air-conditions__data .rain__text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+}
+.body .air-conditions .air-conditions__data .reel-feel__value, .body .air-conditions .air-conditions__data .rain__percentage {
+  font-size: 2.8rem;
   font-weight: 600;
-  color: #161A30;
+  color: #fff;
 }
