@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+
+body{
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+// Colors
+$primary: #40C7F7;
+$gray: #9399A2;
+$dark: #161A30;
+
+
+// fonts
+@mixin font-lg($weight, $color: $dark){
+  font-size: 4.8rem;
+  font-weight: $weight;
+  color: $color;
+}
+@mixin font-md($weight, $color: $dark){
+  font-size: 3.8rem;
+  font-weight: $weight;
+  color: $color;
+}
+@mixin font-sm($weight, $color: $dark){
+  font-size: 2.8rem;
+  font-weight: $weight;
+  color: $color;
+}
+@mixin font-xsm($weight, $color: $dark){
+  font-size: 1.8rem;
+  font-weight: $weight;
+  color: $color;
+}
+
+p{
+  @include font-lg(600)
+}
+div{
+  @include font-md(600)
+}
+span{
+  @include font-sm(600)
+}
+nav{
+  @include font-xsm(600)
+}
