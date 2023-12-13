@@ -49,8 +49,17 @@ $white: #fff;
   color: $color;
 }
 
-@mixin background($color: $sky, $alpah: 0.4){
+@mixin background($color: $white, $alpah: 0.2){
   background: rgba($color, $alpah);
+}
+
+@mixin svg-hover($color: darken($white, 20)){
+  g {
+      fill: $color;
+    }
+  
+    fill: $color;
+    stroke: $color;
 }
 
 .nav-link__svg-active{

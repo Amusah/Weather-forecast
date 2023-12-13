@@ -112,9 +112,9 @@
     </nav>
     <!-- Sidebar menu ends-->
     
+  <!-- current-weather-container -->
     <!-- current Forecast data -->
-
-    <div class="body">
+    <div class="current-weather-container">
       <input placeholder="Search for cities" type="text">
       <div class="current-weather-info">
         <div class="current-weather-info__text">
@@ -131,37 +131,37 @@
       
       <!-- Today's Forecast -->
       <div class="day-forecast">
-        <p class="day-forecast__text">Today's Forecast</p>
+        <h2 class="day-forecast__text">Today's Forecast</h2>
         <div class="day-forecast__container">
           <div class="day-forecast__data 6:00AM">
             <p class="day-forecast__time">6:00 AM</p>
             <img class="day-forecast__icon" src="assets/icons/cloudy.svg" alt="weather-icon">
-            <h2 class="day-forecast__temp">25&deg;</h2>
+            <p class="day-forecast__temp">25&deg;</p>
           </div>
           <div class="day-forecast__data 9:00AM">
             <p class="day-forecast__time">9:00 AM</p>
             <img class="day-forecast__icon" src="assets/icons/partly-cloudy-day.svg" alt="weather-icon">
-            <h2 class="day-forecast__temp">28&deg;</h2>
+            <p class="day-forecast__temp">28&deg;</p>
           </div>
           <div class="day-forecast__data 12:00PM">
             <p class="day-forecast__time">12:00 AM</p>
             <img class="day-forecast__icon" src="assets/icons/rainy.svg" alt="weather-icon">
-            <h2 class="day-forecast__temp">33&deg;</h2>
+            <p class="day-forecast__temp">33&deg;</p>
           </div>
           <div class="day-forecast__data 3:00PM">
             <p class="day-forecast__time">9:00 AM</p>
             <img class="day-forecast__icon" src="assets/icons/clear-day.svg" alt="weather-icon">
-            <h2 class="day-forecast__temp">34&deg;</h2>
+            <p class="day-forecast__temp">34&deg;</p>
           </div>
           <div class="day-forecast__data 6:00PM">
             <p class="day-forecast__time">9:00 AM</p>
             <img class="day-forecast__icon" src="assets/icons/partly-cloudy-day.svg" alt="weather-icon">
-            <h2 class="day-forecast__temp">28&deg;</h2>
+            <p class="day-forecast__temp">28&deg;</p>
           </div>
           <div class="day-forecast__data 9:00PM">
             <p class="day-forecast__time">9:00 AM</p>
             <img class="day-forecast__icon" src="assets/icons/partly-cloudy-night.svg" alt="weather-icon">
-            <h2 class="day-forecast__temp">24&deg;</h2>
+            <p class="day-forecast__temp">24&deg;</p>
           </div>
         </div>
       </div>
@@ -169,7 +169,7 @@
 
       <!-- Air Conditions -->
       <div class="air-conditions">
-        <p class="air-conditions__text">Air Conditions</p>
+        <h2 class="air-conditions__text">Air Conditions</h2>
         <div class="air-conditions__container">
           <div class="air-conditions__data">
             <div class="reel-feel">
@@ -191,7 +191,7 @@
             <div class="wind-speed">
               <span class="wind-speed__info-box">
                 <img class="wind-speed__icon" src="assets/icons/wind-beaufort-0.svg" alt="wind-icon">
-                <p class="wind-text">Wind</p>
+                <p class="wind-text">Wind Speed</p>
               </span>
               <h2 class="wind-speed__value">0.2 km/h</h2>
             </div>
@@ -205,8 +205,75 @@
           </div>
         </div>
       </div>
+      <!-- Air conditions ends -->
     </div>
-    <div class="future-forcast"></div>
+  <!-- current-weather-container ends-->
+
+    <!-- 7-Day Forecast -->
+    <div class="column">
+      <div class="white-space"></div>
+      <div class="future-forecast">
+        <h2 class="future-forecast__text">7-Day-Forecast</h2>
+        <div class="future-forecast__container">
+          <div class="future-forecast__data today+0">
+            <p class="future-forecast__day">Today</p>
+            <span class="future-forecast__info">
+              <img src="assets/icons/clear-day.svg" alt="weather-icon" class="future-forecast__icon">
+              <p class="future-forecast__condition">Sunny</p>
+            </span>
+            <p class="future-forecast__temp">36&deg;</p>
+          </div>
+          <div class="future-forecast__data today+1">
+            <p class="future-forecast__day">Tue</p>
+            <span class="future-forecast__info">
+              <img src="assets/icons/clear-day.svg" alt="weather-icon" class="future-forecast__icon">
+              <p class="future-forecast__condition">Sunny</p>
+            </span>
+            <p class="future-forecast__temp">37&deg;</p>
+          </div>
+          <div class="future-forecast__data today+2">
+            <p class="future-forecast__day">Wed</p>
+            <span class="future-forecast__info">
+              <img src="assets/icons/clear-day.svg" alt="weather-icon" class="future-forecast__icon">
+              <p class="future-forecast__condition">Sunny</p>
+            </span>
+            <p class="future-forecast__temp">37&deg;</p>
+          </div>
+          <div class="future-forecast__data today+3">
+            <p class="future-forecast__day">Thu</p>
+            <span class="future-forecast__info">
+              <img src="assets/icons/cloudy.svg" alt="weather-icon" class="future-forecast__icon">
+              <p class="future-forecast__condition">Cloudy</p>
+            </span>
+            <p class="future-forecast__temp">36&deg;</p>
+          </div>
+          <div class="future-forecast__data today+4">
+            <p class="future-forecast__day">Fri</p>
+            <span class="future-forecast__info">
+              <img src="assets/icons/cloudy.svg" alt="weather-icon" class="future-forecast__icon">
+              <p class="future-forecast__condition">Cloudy</p>
+            </span>
+            <p class="future-forecast__temp">36&deg;</p>
+          </div>
+          <div class="future-forecast__data today+5">
+            <p class="future-forecast__day">Sat</p>
+            <span class="future-forecast__info">
+              <img src="assets/icons/rainy.svg" alt="weather-icon" class="future-forecast__icon">
+              <p class="future-forecast__condition">Rainy</p>
+            </span>
+            <p class="future-forecast__temp">36&deg;</p>
+          </div>
+          <div class="future-forecast__data today+6">
+            <p class="future-forecast__day">Today</p>
+            <span class="future-forecast__info">
+              <img src="assets/icons/clear-day.svg" alt="weather-icon" class="future-forecast__icon">
+              <p class="future-forecast__condition">Sunny</p>
+            </span>
+            <p class="future-forecast__temp">36&deg;</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </body>
 </html>

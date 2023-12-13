@@ -66,17 +66,37 @@ main {
 .navbar .nav-links .nav-link__item svg {
   width: 4.5rem;
   height: 5rem;
+  fill: #fff;
+  stroke: #fff;
+}
+.navbar .nav-links .nav-link__item svg g {
+  fill: #fff;
 }
 .navbar .nav-links .nav-link__item .nav-link__text {
   font-size: 1.8rem;
   font-weight: 400;
   color: #161A30;
+  color: #fff;
+}
+.navbar .nav-links .nav-link__item:hover .nav-link__text {
+  color: #cccccc;
+}
+.navbar .nav-links .nav-link__item:hover svg {
+  fill: #cccccc;
+  stroke: #cccccc;
+}
+.navbar .nav-links .nav-link__item:hover svg g {
+  fill: #cccccc;
 }
 
-.body {
+.current-weather-container {
   width: 60%;
+  margin-left: 2rem;
+  /************ Current weather info ***********/
+  /*********** Today's forecast ***********/
+  /********** Air conditions ***********/
 }
-.body input {
+.current-weather-container input {
   width: 100%;
   height: 4rem;
   border-radius: 0.7rem;
@@ -88,46 +108,48 @@ main {
   color: #161A30;
   color: #cccccc;
 }
-.body input:focus {
+.current-weather-container input:focus {
   outline: none;
 }
-.body input::placeholder {
+.current-weather-container input::placeholder {
   color: #cccccc;
 }
-.body .current-weather-info {
+.current-weather-container .current-weather-info {
   display: flex;
   justify-content: space-between;
 }
-.body .current-weather-info .current-weather-info__text {
+.current-weather-container .current-weather-info .current-weather-info__text {
   padding: 4rem;
 }
-.body .current-weather-info .current-weather-info__text .city-name {
+.current-weather-container .current-weather-info .current-weather-info__text .city-name {
   font-size: 3.8rem;
   font-weight: 600;
   color: #fff;
 }
-.body .current-weather-info .current-weather-info__text span p {
+.current-weather-container .current-weather-info .current-weather-info__text span p {
   font-size: 1.8rem;
   font-weight: 400;
   color: #cccccc;
   padding: 1.5rem 0;
 }
-.body .current-weather-info .current-weather-info__text .current-temp {
+.current-weather-container .current-weather-info .current-weather-info__text .current-temp {
   font-size: 4.8rem;
   font-weight: 700;
   color: #fff;
   font-size: 6rem;
   padding: 2rem 0;
 }
-.body .current-weather-info .current-weather-info__icon {
+.current-weather-container .current-weather-info .current-weather-info__icon {
   width: 25rem;
 }
-.body .day-forecast {
+.current-weather-container .day-forecast {
   min-height: 25vh;
   border-radius: 2rem;
+  width: 100%;
+  margin-bottom: 2rem;
   background: rgba(255, 255, 255, 0.2);
 }
-.body .day-forecast .day-forecast__text {
+.current-weather-container .day-forecast .day-forecast__text {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-size: 1.8rem;
@@ -135,69 +157,130 @@ main {
   color: #fff;
   padding: 2rem;
 }
-.body .day-forecast .day-forecast__container {
+.current-weather-container .day-forecast .day-forecast__container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding: 0 2rem;
 }
-.body .day-forecast .day-forecast__data {
+.current-weather-container .day-forecast .day-forecast__data {
   text-align: center;
   padding-right: 0 2rem;
   width: 16.7%;
 }
-.body .day-forecast .day-forecast__data:not(:last-child) {
-  border-right: 1px solid white;
+.current-weather-container .day-forecast .day-forecast__data:not(:last-child) {
+  border-right: 1px solid #fff;
 }
-.body .day-forecast .day-forecast__data .day-forecast__time {
+.current-weather-container .day-forecast .day-forecast__data .day-forecast__time {
   font-size: 1.8rem;
   font-weight: 400;
   color: #fff;
 }
-.body .day-forecast .day-forecast__data .day-forecast__icon {
+.current-weather-container .day-forecast .day-forecast__data .day-forecast__icon {
   width: 5rem;
 }
-.body .day-forecast .day-forecast__data .day-forecast__temp {
+.current-weather-container .day-forecast .day-forecast__data .day-forecast__temp {
   font-size: 2.8rem;
   font-weight: 600;
   color: #fff;
 }
-.body .air-conditions {
+.current-weather-container .air-conditions {
   min-height: 25vh;
   border-radius: 2rem;
+  padding: 2.5rem 2rem;
+  width: 100%;
   background: rgba(255, 255, 255, 0.2);
 }
-.body .air-conditions .air-conditions__text {
+.current-weather-container .air-conditions .air-conditions__text {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+  padding: 1rem 2rem;
   font-size: 1.8rem;
   font-weight: 500;
   color: #fff;
-  padding: 2rem;
 }
-.body .air-conditions .air-conditions__container {
+.current-weather-container .air-conditions .air-conditions__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  width: 90%;
+  margin: 0 auto;
 }
-.body .air-conditions .air-conditions__data .reel-feel, .body .air-conditions .air-conditions__data .chance-of-rain {
-  text-align: center;
-}
-.body .air-conditions .air-conditions__data .reel-feel__info-box, .body .air-conditions .air-conditions__data .chance-of-rain__info-box {
+.current-weather-container .air-conditions .air-conditions__data .reel-feel__info-box, .current-weather-container .air-conditions .air-conditions__data .chance-of-rain__info-box,
+.current-weather-container .air-conditions .air-conditions__data .wind-speed__info-box, .current-weather-container .air-conditions .air-conditions__data .uv-index__info-box {
   display: flex;
   align-items: center;
 }
-.body .air-conditions .air-conditions__data .thermometer__icon, .body .air-conditions .air-conditions__data .rain__icon {
+.current-weather-container .air-conditions .air-conditions__data .thermometer__icon, .current-weather-container .air-conditions .air-conditions__data .rain__icon,
+.current-weather-container .air-conditions .air-conditions__data .wind-speed__icon, .current-weather-container .air-conditions .air-conditions__data .uv__icon {
   width: 5rem;
 }
-.body .air-conditions .air-conditions__data .reel-feel__text, .body .air-conditions .air-conditions__data .rain__text {
+.current-weather-container .air-conditions .air-conditions__data .reel-feel__text, .current-weather-container .air-conditions .air-conditions__data .rain__text,
+.current-weather-container .air-conditions .air-conditions__data .wind-text, .current-weather-container .air-conditions .air-conditions__data .uv-text {
   font-size: 1.8rem;
   font-weight: 500;
   color: #fff;
 }
-.body .air-conditions .air-conditions__data .reel-feel__value, .body .air-conditions .air-conditions__data .rain__percentage {
+.current-weather-container .air-conditions .air-conditions__data .reel-feel__value, .current-weather-container .air-conditions .air-conditions__data .rain__percentage,
+.current-weather-container .air-conditions .air-conditions__data .wind-speed__value, .current-weather-container .air-conditions .air-conditions__data .uv-index__value {
+  padding-left: 5rem;
   font-size: 2.8rem;
   font-weight: 600;
   color: #fff;
+}
+
+/*********** 7-Day-Forecast ***********/
+.column {
+  width: 30%;
+  margin-left: 2rem;
+}
+.column .white-space {
+  padding: 4rem 0;
+}
+
+.future-forecast {
+  border-radius: 2rem;
+  padding: 2.3rem 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+.future-forecast .future-forecast__text {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding: 2rem 2.5rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+}
+.future-forecast .future-forecast__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 5rem;
+}
+.future-forecast .future-forecast__container .future-forecast__data {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.future-forecast .future-forecast__container .future-forecast__day {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #fff;
+  font-size: 2.2rem;
+  width: 10%;
+}
+.future-forecast .future-forecast__container .future-forecast__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.future-forecast .future-forecast__container .future-forecast__info .future-forecast__icon {
+  width: 5rem;
+}
+.future-forecast .future-forecast__container .future-forecast__temp,
+.future-forecast .future-forecast__container .future-forecast__condition {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+  font-size: 2.3rem;
 }
