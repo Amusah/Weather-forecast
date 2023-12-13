@@ -116,7 +116,7 @@
     <!-- current Forecast data -->
     <div class="current-weather-container">
       <input placeholder="Search for cities" type="text">
-      <div class="current-weather-info">
+      <div class="current-weather-info hidden">
         <div class="current-weather-info__text">
           <span>
             <h2 class="city-name">Madrid</h2>
@@ -130,7 +130,7 @@
       <!-- current Forecast data ends -->
       
       <!-- Today's Forecast -->
-      <div class="day-forecast">
+      <div class="day-forecast hidden">
         <h2 class="day-forecast__text">Today's Forecast</h2>
         <div class="day-forecast__container">
           <div class="day-forecast__data 6:00AM">
@@ -168,7 +168,7 @@
       <!-- Today's Forecast ends -->
 
       <!-- Air Conditions -->
-      <div class="air-conditions">
+      <div class="air-conditions hidden">
         <h2 class="air-conditions__text">Air Conditions</h2>
         <div class="air-conditions__container">
           <div class="air-conditions__data">
@@ -206,6 +206,60 @@
         </div>
       </div>
       <!-- Air conditions ends -->
+
+      <!-- Cities list -->
+      <ul class="city-list">
+        <li class="city-list__item active">
+          <div class="city-weather__data">
+            <img src="assets/icons/clear-day.svg" alt="weather-icon" class="city-weather__icon">
+            <span>
+              <h2 class="city-name">Madrid</h2>
+              <p class="cur-time">10:23 AM</p>
+            </span>
+          </div>
+          <h2 class="city-weather__temp">31&deg;</h2>
+        </li>
+        <li class="city-list__item">
+          <div class="city-weather__data">
+            <img src="assets/icons/thunderstorms-rain.svg" alt="weather-icon" class="city-weather__icon">
+            <span>
+              <h2 class="city-name">Barcelona</h2>
+              <p class="cur-time">10:45 AM</p>
+            </span>
+          </div>
+          <h2 class="city-weather__temp">31&deg;</h2>
+        </li>
+        <li class="city-list__item">
+          <div class="city-weather__data">
+            <img src="assets/icons/clear-day.svg" alt="weather-icon" class="city-weather__icon">
+            <span>
+              <h2 class="city-name">Valencia</h2>
+              <p class="cur-time">10:45 AM</p>
+            </span>
+          </div>
+          <h2 class="city-weather__temp">31&deg;</h2>
+        </li>
+        <li class="city-list__item">
+          <div class="city-weather__data">
+            <img src="assets/icons/rainy.svg" alt="weather-icon" class="city-weather__icon">
+            <span>
+              <h2 class="city-name">Barcelona</h2>
+              <p class="cur-time">10:45 AM</p>
+            </span>
+          </div>
+          <h2 class="city-weather__temp">31&deg;</h2>
+        </li>
+        <li class="city-list__item">
+          <div class="city-weather__data">
+            <img src="assets/icons/rainy.svg" alt="weather-icon" class="city-weather__icon">
+            <span>
+              <h2 class="city-name">Barcelona</h2>
+              <p class="cur-time">10:45 AM</p>
+            </span>
+          </div>
+          <h2 class="city-weather__temp">31&deg;</h2>
+        </li>
+      </ul>
     </div>
   <!-- current-weather-container ends-->
 

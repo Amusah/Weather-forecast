@@ -1,6 +1,6 @@
 main{
   min-height: 100vh;
-  background: url('/assets/img/day.jpg');
+  background: url('/assets/img/sky.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -71,6 +71,7 @@ main{
 .current-weather-container{
   width: 60%;
   margin-left: 2rem;
+  // overflow-y: scroll;
 
   // Input field
   input{
@@ -274,5 +275,74 @@ main{
       @include font-xsm(500, $color: $white);
       font-size: 2.3rem;
     }
+  }
+}
+
+/*********** Cities ***********/
+.city-list{
+  margin-top: 2rem;
+  overflow-y: auto;
+  max-height: 80%;
+  // padding-right: 2rem;
+  scrollbar-width: thin;
+      /* "auto" or "thin" */
+  scrollbar-color: blue orange;
+      /* scroll thumb and track */
+
+  &::-webkit-scrollbar {
+    width: 1rem;
+    /* width of the entire scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    // margin-left: 2rem;
+    @include background($alpha: 0.2);
+    /* color of the tracking area */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @include background($alpha: 0.4);
+    /* color of the scroll thumb */
+    border-radius: 2rem;
+    /* roundness of the scroll thumb */
+    // border: 1rem solid rgba($white, 0.2);
+    /* creates padding around scroll thumb */
+  }
+}
+.city-list__item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 1.5rem 2rem;
+  &:not(:first-child){
+    margin-top: 2rem;
+  }
+  @include background();
+
+  .city-weather__data{
+    // width: 50%;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+
+    .city-weather__icon{
+      width: 10rem;
+    }
+
+    span{
+      .city-name{
+        @include font-md(600, $white);
+      }
+      .cur-time{
+        @include font-xsm(400, darken($white, 10));
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  .city-weather__temp{
+    @include font-md(400, $white);
   }
 }
