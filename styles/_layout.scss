@@ -1,6 +1,6 @@
 main{
   min-height: 100vh;
-  background: url('/assets/img/sky.jpg');
+  background: url('/assets/img/day.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -82,14 +82,14 @@ main{
     padding: 0 1rem;
     @include background();
     @include font-xsm(500);
-    color: darken($white, 20);
+    color: $white;
     // outline: none;
 
     &:focus{
       outline: none;
     }
     &::placeholder{
-      color: darken($white, 20);
+      color: darken($white, 15);
     }
   }
 
@@ -224,19 +224,20 @@ main{
   width: 30%;
   margin-left: 2rem;
   .white-space{
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
 }
 
 .future-forecast {
   border-radius: 2rem;
-  padding: 2.3rem 0;
-  @include background();
+  // padding-bottom: 2.3rem;
+  height: 80vh;
+  // @include background();
 
   .future-forecast__text {
     text-transform: uppercase;
     letter-spacing: .2rem;
-    padding: 2rem 2.5rem;
+    padding: 2.5rem 2.5rem;
     @include font-xsm(500, $color: $white);
   }
 
@@ -276,6 +277,139 @@ main{
       font-size: 2.3rem;
     }
   }
+  // City weather info // might be a seperate component in future
+  .city-forecast-container{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 3rem 2rem;
+    
+    .city-weather-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // padding: 3rem;
+        width: 100%;
+        // margin-bottom: 2rem;
+        // height: 30%;
+    
+        .city-weather-info__text {
+          .city-name {
+            @include font-md(600, $color: $white);
+          }
+    
+          span p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: darken($white, 20);
+            padding: 0.5rem 0;
+          }
+    
+          .current-temp {
+            @include font-md(600, $white);
+            margin-top: 3rem;
+          }
+        }
+    
+        .city-weather-info__icon {
+          width: 10rem;
+        }
+      }
+    
+      // city day (Today's) forecast
+      .city-day-forecast {
+        width: 100%;
+    
+        // margin-bottom: 2rem;
+    
+        .city-day-forecast__text {
+          text-transform: uppercase;
+          letter-spacing: .1rem;
+          @include font-xsm(500, $color: $white);
+          padding: 2rem 0;
+        }
+    
+        .city-day-forecast__container {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          // margin: 0 auto;
+          // padding: 0 2rem;
+        }
+    
+        .city-day-forecast__data {
+          text-align: center;
+          padding: 0 2rem;
+          width: 35%;
+    
+          &:not(:last-child) {
+            border-right: 1px solid $white;
+          }
+    
+          .city-day-forecast__time {
+            @include font-xsm(400, $color: $white);
+            font-size: 1.5rem;
+            width: 100%;
+          }
+    
+          .city-day-forecast__icon {
+            width: 5rem;
+          }
+    
+          .city-day-forecast__temp {
+            @include font-sm(600, $color: $white);
+          }
+    
+        }
+      }
+
+      // city future (3-DAY) Forecast
+      .city-future-forecast{
+        .city-future-forecast__text {
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            padding: 2rem 0;
+            @include font-xsm(500, $color: $white);
+          }
+        
+          .city-future-forecast__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 3rem;
+        
+            .city-future-forecast__data {
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+            }
+        
+            .city-future-forecast__day {
+              @include font-xsm(300, $color: $white);
+              font-size: 2rem;
+              // width: 10%;
+            }
+        
+            .city-future-forecast__info {
+              // width: 35%;
+              display: flex;
+              align-items: center;
+              justify-content: space-evenly;
+              // text-align: center;
+        
+              .city-future-forecast__icon {
+                width: 5rem;
+              }
+            }
+        
+            .city-future-forecast__temp,
+            .city-future-forecast__condition {
+              @include font-xsm(500, $color: $white);
+              font-size: 2.3rem;
+            }
+          }
+      }
+  }
 }
 
 /*********** Cities ***********/
@@ -296,12 +430,12 @@ main{
 
   &::-webkit-scrollbar-track {
     // margin-left: 2rem;
-    @include background($alpha: 0.2);
+    @include background($color: $sky, $alpha: 0.3);
     /* color of the tracking area */
   }
 
   &::-webkit-scrollbar-thumb {
-    @include background($alpha: 0.4);
+    @include background($alpha: 0.5);
     /* color of the scroll thumb */
     border-radius: 2rem;
     /* roundness of the scroll thumb */
@@ -315,10 +449,16 @@ main{
   align-items: center;
   border-radius: 2rem;
   padding: 1.5rem 2rem;
-  &:not(:first-child){
-    margin-top: 2rem;
-  }
+  cursor: pointer;
+  transition: all .1s ease-in;
   @include background();
+  &:not(:first-child) {
+      margin-top: 2rem;
+    }
+  &:hover{
+    // box-shadow: 0 0.1rem 0.1rem 0.1rem $white;
+    transform: translateY(-.3rem);
+  }
 
   .city-weather__data{
     // width: 50%;

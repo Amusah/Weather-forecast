@@ -34,6 +34,7 @@ html{
 
 body{
   font-family: 'Barlow Semi Condensed', sans-serif;
+  overflow: hidden;
   // background: url('/assets/img/night.jpg');
   // background-size: cover;
   // background-position: center;
@@ -98,6 +99,14 @@ $white: #fff;
 
 .active{
   border: 0.1rem solid $white;
+}
+
+.hover{
+  box-shadow: 1rem 1rem 0.5rem 1rem $white;
+}
+
+.bg{
+  @include background();
 }
 
 // p{

@@ -11,6 +11,7 @@ html {
 
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
+  overflow: hidden;
 }
 
 .nav-link__svg-active {
@@ -30,9 +31,17 @@ body {
   border: 0.1rem solid #fff;
 }
 
+.hover {
+  box-shadow: 1rem 1rem 0.5rem 1rem #fff;
+}
+
+.bg {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 main {
   min-height: 100vh;
-  background: url("/assets/img/sky.jpg");
+  background: url("/assets/img/day.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -114,13 +123,13 @@ main {
   font-size: 1.8rem;
   font-weight: 500;
   color: #161A30;
-  color: #cccccc;
+  color: #fff;
 }
 .current-weather-container input:focus {
   outline: none;
 }
 .current-weather-container input::placeholder {
-  color: #cccccc;
+  color: #d9d9d9;
 }
 .current-weather-container .current-weather-info {
   display: flex;
@@ -243,18 +252,17 @@ main {
   margin-left: 2rem;
 }
 .column .white-space {
-  padding: 4rem 0;
+  padding: 5rem 0;
 }
 
 .future-forecast {
   border-radius: 2rem;
-  padding: 2.3rem 0;
-  background: rgba(255, 255, 255, 0.2);
+  height: 80vh;
 }
 .future-forecast .future-forecast__text {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  padding: 2rem 2.5rem;
+  padding: 2.5rem 2.5rem;
   font-size: 1.8rem;
   font-weight: 500;
   color: #fff;
@@ -292,6 +300,117 @@ main {
   color: #fff;
   font-size: 2.3rem;
 }
+.future-forecast .city-forecast-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 3rem 2rem;
+}
+.future-forecast .city-forecast-container .city-weather-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.future-forecast .city-forecast-container .city-weather-info .city-weather-info__text .city-name {
+  font-size: 3.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+.future-forecast .city-forecast-container .city-weather-info .city-weather-info__text span p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #cccccc;
+  padding: 0.5rem 0;
+}
+.future-forecast .city-forecast-container .city-weather-info .city-weather-info__text .current-temp {
+  font-size: 3.8rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 3rem;
+}
+.future-forecast .city-forecast-container .city-weather-info .city-weather-info__icon {
+  width: 10rem;
+}
+.future-forecast .city-forecast-container .city-day-forecast {
+  width: 100%;
+}
+.future-forecast .city-forecast-container .city-day-forecast .city-day-forecast__text {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 2rem 0;
+}
+.future-forecast .city-forecast-container .city-day-forecast .city-day-forecast__container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.future-forecast .city-forecast-container .city-day-forecast .city-day-forecast__data {
+  text-align: center;
+  padding: 0 2rem;
+  width: 35%;
+}
+.future-forecast .city-forecast-container .city-day-forecast .city-day-forecast__data:not(:last-child) {
+  border-right: 1px solid #fff;
+}
+.future-forecast .city-forecast-container .city-day-forecast .city-day-forecast__data .city-day-forecast__time {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #fff;
+  font-size: 1.5rem;
+  width: 100%;
+}
+.future-forecast .city-forecast-container .city-day-forecast .city-day-forecast__data .city-day-forecast__icon {
+  width: 5rem;
+}
+.future-forecast .city-forecast-container .city-day-forecast .city-day-forecast__data .city-day-forecast__temp {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+.future-forecast .city-forecast-container .city-future-forecast .city-future-forecast__text {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  padding: 2rem 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+}
+.future-forecast .city-forecast-container .city-future-forecast .city-future-forecast__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+.future-forecast .city-forecast-container .city-future-forecast .city-future-forecast__container .city-future-forecast__data {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.future-forecast .city-forecast-container .city-future-forecast .city-future-forecast__container .city-future-forecast__day {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #fff;
+  font-size: 2rem;
+}
+.future-forecast .city-forecast-container .city-future-forecast .city-future-forecast__container .city-future-forecast__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.future-forecast .city-forecast-container .city-future-forecast .city-future-forecast__container .city-future-forecast__info .city-future-forecast__icon {
+  width: 5rem;
+}
+.future-forecast .city-forecast-container .city-future-forecast .city-future-forecast__container .city-future-forecast__temp,
+.future-forecast .city-forecast-container .city-future-forecast .city-future-forecast__container .city-future-forecast__condition {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+  font-size: 2.3rem;
+}
 
 /*********** Cities ***********/
 .city-list {
@@ -308,11 +427,11 @@ main {
   /* width of the entire scrollbar */
 }
 .city-list::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(27, 100, 153, 0.3);
   /* color of the tracking area */
 }
 .city-list::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   /* color of the scroll thumb */
   border-radius: 2rem;
   /* roundness of the scroll thumb */
@@ -325,10 +444,15 @@ main {
   align-items: center;
   border-radius: 2rem;
   padding: 1.5rem 2rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
   background: rgba(255, 255, 255, 0.2);
 }
 .city-list__item:not(:first-child) {
   margin-top: 2rem;
+}
+.city-list__item:hover {
+  transform: translateY(-0.3rem);
 }
 .city-list__item .city-weather__data {
   display: flex;

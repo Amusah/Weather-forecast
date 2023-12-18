@@ -8,7 +8,7 @@
 </head>
 <body>
   <main>
-<!-- Sidebar menu -->
+    <!-- Sidebar menu -->
     <nav class="navbar">
       <div class="nav-logo"><img src="assets/icons/umbrella.svg" alt="logo"></div>
       <ul class="nav-links">
@@ -112,11 +112,11 @@
     </nav>
     <!-- Sidebar menu ends-->
     
-  <!-- current-weather-container -->
+    <!-- current-weather-container -->
     <!-- current Forecast data -->
     <div class="current-weather-container">
       <input placeholder="Search for cities" type="text">
-      <div class="current-weather-info hidden">
+      <div class="current-weather-info">
         <div class="current-weather-info__text">
           <span>
             <h2 class="city-name">Madrid</h2>
@@ -130,7 +130,7 @@
       <!-- current Forecast data ends -->
       
       <!-- Today's Forecast -->
-      <div class="day-forecast hidden">
+      <div class="day-forecast">
         <h2 class="day-forecast__text">Today's Forecast</h2>
         <div class="day-forecast__container">
           <div class="day-forecast__data 6:00AM">
@@ -168,7 +168,7 @@
       <!-- Today's Forecast ends -->
 
       <!-- Air Conditions -->
-      <div class="air-conditions hidden">
+      <div class="air-conditions">
         <h2 class="air-conditions__text">Air Conditions</h2>
         <div class="air-conditions__container">
           <div class="air-conditions__data">
@@ -208,7 +208,7 @@
       <!-- Air conditions ends -->
 
       <!-- Cities list -->
-      <ul class="city-list">
+      <ul class="city-list hidden">
         <li class="city-list__item active">
           <div class="city-weather__data">
             <img src="assets/icons/clear-day.svg" alt="weather-icon" class="city-weather__icon">
@@ -249,24 +249,15 @@
           </div>
           <h2 class="city-weather__temp">31&deg;</h2>
         </li>
-        <li class="city-list__item">
-          <div class="city-weather__data">
-            <img src="assets/icons/rainy.svg" alt="weather-icon" class="city-weather__icon">
-            <span>
-              <h2 class="city-name">Barcelona</h2>
-              <p class="cur-time">10:45 AM</p>
-            </span>
-          </div>
-          <h2 class="city-weather__temp">31&deg;</h2>
-        </li>
       </ul>
+      <!-- Cities list ends-->
     </div>
-  <!-- current-weather-container ends-->
+    <!-- current-weather-container ends-->
 
-    <!-- 7-Day Forecast -->
+    <!-- 7-Day Forecast and other forecast details-->
     <div class="column">
       <div class="white-space"></div>
-      <div class="future-forecast">
+      <div class="future-forecast bg">
         <h2 class="future-forecast__text">7-Day-Forecast</h2>
         <div class="future-forecast__container">
           <div class="future-forecast__data today+0">
@@ -325,6 +316,76 @@
             </span>
             <p class="future-forecast__temp">36&deg;</p>
           </div>
+        </div>
+        <!---------------------- city forecast info ----------------------------->
+        <div class="city-forecast-container hidden">
+
+          <div class="city-weather-info">
+            <div class="city-weather-info__text">
+              <span>
+                <h2 class="city-name">Madrid</h2>
+                <p>Chance of rain: 0%</p>
+              </span>
+              <h1 class="current-temp">31&deg;</h1>
+            </div>
+            <img class="city-weather-info__icon" src="assets/icons/sun.svg" alt="weather-icon">
+          </div>
+
+          <!-- city Today's forecast -->
+
+          <div class="city-day-forecast">
+            <h2 class="city-day-forecast__text">Today's Forecast</h2>
+            <div class="city-day-forecast__container">
+              <div class="city-day-forecast__data 6:00AM">
+                <p class="city-day-forecast__time">6:00 AM</p>
+                <img class="city-day-forecast__icon" src="assets/icons/cloudy.svg" alt="weather-icon">
+                <p class="city-day-forecast__temp">25&deg;</p>
+              </div>
+              <div class="city-day-forecast__data 6:00AM">
+                <p class="city-day-forecast__time">6:00 AM</p>
+                <img class="city-day-forecast__icon" src="assets/icons/partly-cloudy-day.svg" alt="weather-icon">
+                <p class="city-day-forecast__temp">25&deg;</p>
+              </div>
+              <div class="city-day-forecast__data 6:00AM">
+                <p class="city-day-forecast__time">6:00 AM</p>
+                <img class="city-day-forecast__icon" src="assets/icons/clear-day.svg" alt="weather-icon">
+                <p class="city-day-forecast__temp">25&deg;</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- city future forecast (3-Day Forecast) -->
+
+          <div class="city-future-forecast">
+            <h2 class="city-future-forecast__text">3-Day-Forecast</h2>
+            <div class="city-future-forecast__container">
+              <div class="city-future-forecast__data today+0">
+                <p class="city-future-forecast__day">Today</p>
+                <span class="city-future-forecast__info">
+                  <img src="assets/icons/clear-day.svg" alt="weather-icon" class="city-future-forecast__icon">
+                  <p class="city-future-forecast__condition">Sunny</p>
+                </span>
+                <p class="city-future-forecast__temp">36&deg;</p>
+              </div>
+              <div class="city-future-forecast__data today+5">
+                <p class="city-future-forecast__day">Tue</p>
+                <span class="city-future-forecast__info">
+                  <img src="assets/icons/rainy.svg" alt="weather-icon" class="city-future-forecast__icon">
+                  <p class="city-future-forecast__condition">Rainy</p>
+                </span>
+                <p class="city-future-forecast__temp">36&deg;</p>
+              </div>
+              <div class="city-future-forecast__data today+6">
+                <p class="city-future-forecast__day">Wed</p>
+                <span class="city-future-forecast__info">
+                  <img src="assets/icons/clear-day.svg" alt="weather-icon" class="city-future-forecast__icon">
+                  <p class="city-future-forecast__condition">Sunny</p>
+                </span>
+                <p class="city-future-forecast__temp">36&deg;</p>
+              </div>
+            </div>
+          </div>
+          <!-- city future forecast (3-Day Forecast) ends-->
         </div>
       </div>
     </div>
