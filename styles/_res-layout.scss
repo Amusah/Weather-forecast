@@ -1,0 +1,336 @@
+@media screen and (max-width: 860px){
+  .navbar {
+    height: 85vh;
+  
+      .nav-logo {
+        margin-bottom: 5rem;
+  
+        img {
+          width: 5rem;
+        }
+      }
+  
+      .nav-links {
+        height: 50vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+  
+        .nav-link__item {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          cursor: pointer;
+          // height: 10rem;
+  
+          svg {
+            width: 3.5rem;
+            height: 4rem;
+          }
+  
+          .nav-link__text {
+            font-size: 1.5rem;
+          }
+
+        }
+      }
+    }
+
+  .current-weather-container {
+  
+      /************ Current weather info ***********/
+      .current-weather-info {
+  
+        .current-weather-info__text {
+          padding: 3rem;
+  
+          .current-temp {
+            @include font-lg(700, $color: $white);
+            font-size: 5rem;
+          }
+        }
+  
+        .current-weather-info__icon {
+          width: 19rem;
+        }
+      }
+  
+      /*********** Today's forecast ***********/
+      .day-forecast {
+        min-height: 20vh;
+        .day-forecast__text {
+          font-size: 1.6rem;
+        }
+  
+        .day-forecast__container {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          padding: 0 2rem;
+        }
+  
+        .day-forecast__data {
+  
+          .day-forecast__time {
+            font-size: 1.5rem;
+          }
+  
+          .day-forecast__icon {
+            width: 3.5rem;
+          }
+  
+          .day-forecast__temp {
+            font-size: 2rem;
+          }
+  
+        }
+      }
+  
+  /********** Air conditions ***********/
+      .air-conditions {
+        min-height: 25vh;
+        padding: 2rem;
+  
+        .air-conditions__text {
+          font-size: 1.6rem;
+        }
+  
+        .air-conditions__data {  
+          .thermometer__icon,
+          .rain__icon,
+          .wind-speed__icon,
+          .uv__icon {
+            width: 4rem;
+          }
+  
+          .reel-feel__text,
+          .rain__text,
+          .wind-text,
+          .uv-text {
+            font-size: 1.5rem;
+          }
+  
+          .reel-feel__value,
+          .rain__percentage,
+          .wind-speed__value,
+          .uv-index__value {
+            padding-left: 5rem;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+  /*********** 7-Day-Forecast ***********/
+  .column{
+    .white-space{
+      display: none;
+    }
+  }
+  .future-forecast {
+    min-height: 85vh;
+      .future-forecast__text {
+        letter-spacing: .1rem;
+        text-align: center;
+      }
+  
+      .future-forecast__container {
+        gap: 4.5rem;
+  
+        .future-forecast__day {
+          font-size: 1.8rem;
+        }
+  
+        .future-forecast__info .future-forecast__icon {
+          width: 4rem;
+        }
+  
+        .future-forecast__temp,
+        .future-forecast__condition {
+          font-size: 1.8rem;
+        }
+      }
+    }
+}
+
+@media screen and (max-width: 760px){
+
+.navbar {
+    height: 82vh;
+
+    .nav-logo {
+
+      img {
+        width: 4.5rem;
+      }
+    }
+
+    .nav-links {
+
+      .nav-link__item {
+
+        svg {
+          width: 3.5rem;
+          height: 4rem;
+        }
+
+        .nav-link__text {
+          font-size: 1.5rem;
+        }
+
+        &:hover .nav-link__text {
+          color: darken($white, 20);
+        }
+
+        &:hover svg {
+          @include svg-hover();
+        }
+      }
+    }
+  }
+
+
+/************ Current weather info ***********/
+     .current-weather-container {
+      .current-weather-info {
+  
+        .current-weather-info__text {
+          padding: 3rem;
+  
+          .city-name {
+            font-size: 3rem;
+          }
+  
+          span p {
+            font-size: 1.5rem;
+          }
+  
+          .current-temp {
+            font-size: 4.5rem;
+          }
+        }
+  
+        .current-weather-info__icon {
+          width: 16rem;
+        }
+      }
+  
+      /*********** Today's forecast ***********/
+      .day-forecast {
+        // min-height: 20vh;
+  
+        .day-forecast__text {
+          font-size: 1.6rem;
+        }
+  
+        .day-forecast__container {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          padding: 0 2rem;
+        }
+  
+        .day-forecast__data {
+          text-align: center;
+          padding-right: 0 2rem;
+          width: 16.7%;
+  
+          // &:not(:last-child) {
+          //   border-right: 1px solid $white;
+          // }
+  
+          .day-forecast__time {
+            font-size: 1.4rem;
+          }
+  
+          .day-forecast__icon {
+            width: 3.5rem;
+          }
+  
+          .day-forecast__temp {
+            @include font-xsm(600, $color: $white);
+            font-size: 1.8rem;
+          }
+  
+        }
+      }
+  
+      /********** Air conditions ***********/
+      .air-conditions {  
+        .air-conditions__text {
+          font-size: 1.6rem;
+        }
+  
+        // .air-conditions__container {
+        //   // display: flex;
+        //   // justify-content: space-between;
+        //   // align-items: center;
+        //   // // padding: 0 2rem;
+        //   // width: 90%;
+        //   // margin: 0 auto;
+        // }
+  
+        .air-conditions__data {
+  
+          // .reel-feel__info-box,
+          // .chance-of-rain__info-box,
+          // .wind-speed__info-box,
+          // .uv-index__info-box {
+          //   display: flex;
+          //   align-items: center;
+          //   // width: 100%;
+          // }
+  
+          .thermometer__icon,
+          .rain__icon,
+          .wind-speed__icon,
+          .uv__icon {
+            width: 4rem;
+          }
+  
+          .reel-feel__text,
+          .rain__text,
+          .wind-text,
+          .uv-text {
+            font-size: 1.5rem;
+          }
+  
+          .reel-feel__value,
+          .rain__percentage,
+          .wind-speed__value,
+          .uv-index__value {
+            padding-left: 5rem;
+            font-size: 1.9rem;
+          }
+        }
+      }
+    }
+
+    /*********** 7-Day-Forecast ***********/
+      .future-forecast {
+        min-height: 82vh;
+
+        .future-forecast__text {
+          font-size: 1.5rem;
+        }
+
+        .future-forecast__container {
+          gap: 4.5rem;
+
+          .future-forecast__day {
+            font-size: 1.8rem;
+          }
+
+          .future-forecast__info .future-forecast__icon {
+            width: 4rem;
+          }
+
+          .future-forecast__temp,
+          .future-forecast__condition {
+            font-size: 1.8rem;
+          }
+        }
+      }
+}

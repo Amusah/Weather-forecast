@@ -1,0 +1,438 @@
+/*********** Cities ***********/
+.city-list {
+  margin-top: 2rem;
+  overflow-y: auto;
+  max-height: 80%;
+  // padding-right: 2rem;
+  scrollbar-width: auto;
+  /* "auto" or "thin" */
+  scrollbar-color: rgba($white, 0.2);
+  /* scroll thumb and track */
+
+  &::-webkit-scrollbar {
+    width: .5rem;
+    /* width of the entire scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    // margin-left: 2rem;
+    @include background($color: $sky, $alpha: 0.3);
+    /* color of the tracking area */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @include background($alpha: 0.5);
+    /* color of the scroll thumb */
+    border-radius: 2rem;
+    /* roundness of the scroll thumb */
+    // border: 1rem solid rgba($white, 0.2);
+    /* creates padding around scroll thumb */
+  }
+}
+
+.city-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  transition: all .1s ease-in;
+  @include background();
+
+  &:not(:first-child) {
+    margin-top: 2rem;
+  }
+
+  &:hover {
+    // box-shadow: 0 0.1rem 0.1rem 0.1rem $white;
+    transform: translateY(-.3rem);
+  }
+
+  .city-weather__data {
+    // width: 50%;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+
+    .city-weather__icon {
+      width: 10rem;
+    }
+
+    span {
+      .city-name {
+        @include font-md(600, $white);
+      }
+
+      .cur-time {
+        @include font-xsm(400, darken($white, 10));
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  .city-weather__temp {
+    @include font-md(400, $white);
+  }
+}
+
+
+ /*---------------------- city forecast info -----------------------------*/
+.city-forecast-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 3rem;
+
+  .city-weather-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 3rem;
+    width: 100%;
+    // margin-bottom: 2rem;
+    // height: 30%;
+
+    .city-weather-info__text {
+      .city-name {
+        @include font-md(600, $color: $white);
+      }
+
+      span p {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: darken($white, 20);
+        padding: 0.5rem 0;
+      }
+
+      .current-temp {
+        @include font-md(600, $white);
+        margin-top: 3rem;
+      }
+    }
+
+    .city-weather-info__icon-1 {
+      width: 10rem;
+      display: none;
+    }
+
+    .city-weather-info__icon {
+      width: 10rem;
+    }
+  }
+
+  // city day (Today's) forecast
+  .city-day-forecast {
+    width: 100%;
+
+    // margin-bottom: 2rem;
+
+    .city-day-forecast__text {
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      @include font-xsm(500, $color: $white);
+      padding: 2rem 0;
+    }
+
+    .city-day-forecast__container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      // margin: 0 auto;
+      // padding: 0 2rem;
+    }
+
+    .city-day-forecast__data {
+      text-align: center;
+      padding: 0 2rem;
+      width: 35%;
+
+      &:not(:last-child) {
+        border-right: 1px solid $white;
+      }
+
+      .city-day-forecast__time {
+        @include font-xsm(400, $color: $white);
+        font-size: 1.5rem;
+        width: 100%;
+      }
+
+      .city-day-forecast__icon {
+        width: 5rem;
+      }
+
+      .city-day-forecast__temp {
+        @include font-sm(600, $color: $white);
+      }
+
+    }
+  }
+
+  // city future (3-DAY) Forecast
+  .city-future-forecast {
+    .city-future-forecast__text {
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      padding: 2rem 0;
+      @include font-xsm(500, $color: $white);
+    }
+
+    .city-future-forecast__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      gap: 3rem;
+
+      .city-future-forecast__data {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .city-future-forecast__day {
+        @include font-xsm(300, $color: $white);
+        font-size: 2rem;
+        // width: 10%;
+      }
+
+      .city-future-forecast__info {
+        // width: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        // text-align: center;
+
+        .city-future-forecast__icon {
+          width: 5rem;
+        }
+      }
+
+      .city-future-forecast__temp,
+      .city-future-forecast__condition {
+        @include font-xsm(500, $color: $white);
+        font-size: 2.3rem;
+      }
+    }
+  }
+}
+
+
+
+
+// Responsive layout
+@media screen and (max-width: 860px){
+  .city-list {
+    // margin-top: 2rem;
+    // overflow-y: auto;
+    // max-height: 80%;
+    // // padding-right: 2rem;
+    // scrollbar-width: 1rem;
+    // /* "auto" or "thin" */
+    // scrollbar-color: rgba($white, 0.2);
+    // /* scroll thumb and track */
+
+    // &::-webkit-scrollbar {
+    //   width: 0.5rem;
+    //   /* width of the entire scrollbar */
+    // }
+
+    // &::-webkit-scrollbar-track {
+    //   // margin-left: 2rem;
+    //   @include background($color: $sky, $alpha: 0.3);
+    //   /* color of the tracking area */
+    // }
+
+    // &::-webkit-scrollbar-thumb {
+    //   @include background($alpha: 0.5);
+    //   /* color of the scroll thumb */
+    //   border-radius: 2rem;
+    //   /* roundness of the scroll thumb */
+    //   // border: 1rem solid rgba($white, 0.2);
+    //   /* creates padding around scroll thumb */
+    // }
+  }
+
+  .city-list__item {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // border-radius: 2rem;
+    // padding: 1.5rem 2rem;
+    // cursor: pointer;
+    // transition: all .1s ease-in;
+    // @include background();
+
+    &:not(:first-child) {
+      margin-top: 1.5rem;
+    }
+
+    // &:hover {
+    //   // box-shadow: 0 0.1rem 0.1rem 0.1rem $white;
+    //   transform: translateY(-.3rem);
+    // }
+
+    .city-weather__data {
+      // width: 50%;
+      // display: flex;
+      // // justify-content: space-between;
+      // align-items: center;
+      // gap: 5rem;
+
+      .city-weather__icon {
+        width: 7rem;
+      }
+
+      span {
+        .city-name {
+          font-size: 2.8rem;
+        }
+
+        .cur-time {
+          font-size: 1.8rem;
+        }
+      }
+    }
+
+    .city-weather__temp {
+      @include font-md(400, $white);
+      font-size: 2.8rem;
+    }
+  }
+
+  
+/*---------------------- city forecast info -----------------------------*/
+  .city-forecast-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 0 0;
+    // transition: all 2s ease-in;
+
+    .city-weather-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .city-weather-info__text {
+        text-align: center;
+
+        .city-name {
+          @include font-md(600, $color: $white);
+        }
+
+        span p {
+          font-size: 1.8rem;
+          font-weight: 300;
+          color: darken($white, 15);
+          padding: 0.5rem 0;
+        }
+
+        .current-temp {
+          @include font-md(600, $white);
+          margin-top: 3rem;
+        }
+      }
+
+      .city-weather-info__icon-1 {
+        width: 10rem;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .city-weather-info__icon {
+        width: 10rem;
+        display: none;
+      }
+    }
+
+    // city day (Today's) forecast
+    .city-day-forecast {
+      text-align: center;
+
+      .city-day-forecast__text {
+        // text-transform: uppercase;
+        // letter-spacing: .1rem;
+        // @include font-xsm(500, $color: $white);
+        padding: 1.8rem 0;
+      }
+
+      .city-day-forecast__container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        // margin: 0 auto;
+        // padding: 0 2rem;
+      }
+
+      .city-day-forecast__data {
+        text-align: center;
+        padding: 0;
+        // padding-right: 1.5rem;
+        width: 30%;
+        margin: 0 auto;
+
+        &:not(:last-child) {
+          border-right: 1px solid $white;
+        }
+
+        .city-day-forecast__time {
+          font-size: 1.5rem;
+        }
+
+        .city-day-forecast__icon {
+          width: 3rem;
+        }
+
+        .city-day-forecast__temp {
+          font-size: 1.8rem;
+        }
+      }
+    }
+
+    // city future (3-DAY) Forecast
+    .city-future-forecast {
+      text-align: center;
+      .city-future-forecast__text {
+        // text-transform: uppercase;
+        // letter-spacing: .1rem;
+        padding: 1.5rem 0;
+        // @include font-xsm(500, $color: $white);
+      }
+
+      .city-future-forecast__container {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-evenly;
+        gap: 1rem;
+
+        .city-future-forecast__data {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+
+        .city-future-forecast__day {
+          font-size: 1.8rem;
+        }
+
+        .city-future-forecast__info {
+          // width: 35%;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          // text-align: center;
+
+          .city-future-forecast__icon {
+            width: 4rem;
+          }
+        }
+
+        .city-future-forecast__temp,
+        .city-future-forecast__condition {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}
