@@ -27,6 +27,10 @@ main{
     }
   }
 
+  .nav-toggler{
+    display: none;
+  }
+
   .nav-links{
     height: 60vh;
     width: 100%;
@@ -68,7 +72,7 @@ main{
   }
 }
 
-.current-weather-container{
+.main-container{
   width: 60%;
   margin-left: 2rem;
   // overflow-y: scroll;

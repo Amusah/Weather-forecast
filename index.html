@@ -11,9 +11,12 @@
     <!-- Sidebar menu -->
     <nav class="navbar">
       <div class="nav-logo"><img src="assets/icons/umbrella.svg" alt="logo"></div>
+      <div class="nav-toggler">
+        <img class="nav-toggler__icon" src="assets/icons/arrow.svg" alt="arrow-icon">
+      </div>
       <ul class="nav-links">
         <li class="nav-link__item">          
-          <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          <svg width="" height="" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
             <g class="nav-link__svg" id="Page-1" stroke="none" stroke-width="1" fill="" fill-rule="evenodd" sketch:type="MSPage">
               <g id="icon-40-clouds" sketch:type="MSArtboardGroup" fill="#000000">
@@ -112,101 +115,104 @@
     </nav>
     <!-- Sidebar menu ends-->
     
-    <!-- current-weather-container -->
-    <!-- current Forecast data -->
-    <div class="current-weather-container">
-      <input placeholder="Search for cities" type="text">
-      <div class="current-weather-info">
-        <div class="current-weather-info__text">
-          <span>
-            <h2 class="city-name">Madrid</h2>
-            <p>Chance of rain: 0%</p>
-          </span>
-          <img class="current-weather-info__icon-1" src="assets/icons/sun.svg" alt="weather-icon">
-          <h1 class="current-temp">31&deg;</h1>
-        </div>
-        <img class="current-weather-info__icon" src="assets/icons/sun.svg" alt="weather-icon">
+    <!-- main container -->
+      <div class="main-container">
+        <input placeholder="Search for cities" type="text">
+        <!-- current Forecast data -->
+        <div class="current-weather-container ">
+          <!-- <input placeholder="Search for cities" type="text"> -->
+          <div class="current-weather-info">
+            <div class="current-weather-info__text">
+              <span>
+                <h2 class="city-name">Madrid</h2>
+                <p>Chance of rain: 0%</p>
+              </span>
+              <img class="current-weather-info__icon-1" src="assets/icons/sun.svg" alt="weather-icon">
+              <h1 class="current-temp">31&deg;</h1>
+            </div>
+            <img class="current-weather-info__icon" src="assets/icons/sun.svg" alt="weather-icon">
+          </div>
+        
+          <!-- current Forecast data ends -->
+        
+          <!-- Today's Forecast -->
+          <div class="day-forecast">
+            <h2 class="day-forecast__text">Today's Forecast</h2>
+            <div class="day-forecast__container">
+              <div class="day-forecast__data 6:00AM">
+                <p class="day-forecast__time">6:00 AM</p>
+                <img class="day-forecast__icon" src="assets/icons/cloudy.svg" alt="weather-icon">
+                <p class="day-forecast__temp">25&deg;</p>
+              </div>
+              <div class="day-forecast__data 9:00AM">
+                <p class="day-forecast__time">9:00 AM</p>
+                <img class="day-forecast__icon" src="assets/icons/partly-cloudy-day.svg" alt="weather-icon">
+                <p class="day-forecast__temp">28&deg;</p>
+              </div>
+              <div class="day-forecast__data 12:00PM">
+                <p class="day-forecast__time">12:00 AM</p>
+                <img class="day-forecast__icon" src="assets/icons/rainy.svg" alt="weather-icon">
+                <p class="day-forecast__temp">33&deg;</p>
+              </div>
+              <div class="day-forecast__data 3:00PM">
+                <p class="day-forecast__time">9:00 AM</p>
+                <img class="day-forecast__icon" src="assets/icons/clear-day.svg" alt="weather-icon">
+                <p class="day-forecast__temp">34&deg;</p>
+              </div>
+              <div class="day-forecast__data 6:00PM">
+                <p class="day-forecast__time">9:00 AM</p>
+                <img class="day-forecast__icon" src="assets/icons/partly-cloudy-day.svg" alt="weather-icon">
+                <p class="day-forecast__temp">28&deg;</p>
+              </div>
+              <div class="day-forecast__data 9:00PM">
+                <p class="day-forecast__time">9:00 AM</p>
+                <img class="day-forecast__icon" src="assets/icons/partly-cloudy-night.svg" alt="weather-icon">
+                <p class="day-forecast__temp">24&deg;</p>
+              </div>
+            </div>
+          </div>
+          <!-- Today's Forecast ends -->
+        
+          <!-- Air Conditions -->
+          <div class="air-conditions">
+            <h2 class="air-conditions__text">Air Conditions</h2>
+            <div class="air-conditions__container">
+              <div class="air-conditions__data">
+                <div class="reel-feel">
+                  <span class="reel-feel__info-box">
+                    <img class="thermometer__icon" src="assets/icons/thermometer.svg" alt="thermometer-icon">
+                    <p class="reel-feel__text">Real Feel</p>
+                  </span>
+                  <h2 class="reel-feel__value">30&deg;</h2>
+                </div>
+                <div class="chance-of-rain">
+                  <span class="chance-of-rain__info-box">
+                    <img class="rain__icon" src="assets/icons/raindrop.svg" alt="raindrop icon">
+                    <p class="rain__text">Chance of rain</p>
+                  </span>
+                  <h2 class="rain__percentage">0%</h2>
+                </div>
+              </div>
+              <div class="air-conditions__data">
+                <div class="wind-speed">
+                  <span class="wind-speed__info-box">
+                    <img class="wind-speed__icon" src="assets/icons/wind-beaufort-0.svg" alt="wind-icon">
+                    <p class="wind-text">Wind Speed</p>
+                  </span>
+                  <h2 class="wind-speed__value">0.2 km/h</h2>
+                </div>
+                <div class="uv-index">
+                  <span class="uv-index__info-box">
+                    <img class="uv__icon" src="assets/icons/uv-index.svg" alt="sun">
+                    <p class="uv-text">UV Index</p>
+                  </span>
+                  <h2 class="uv-index__value">3</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Air conditions ends -->
       </div>
-
-      <!-- current Forecast data ends -->
-      
-      <!-- Today's Forecast -->
-      <div class="day-forecast">
-        <h2 class="day-forecast__text">Today's Forecast</h2>
-        <div class="day-forecast__container">
-          <div class="day-forecast__data 6:00AM">
-            <p class="day-forecast__time">6:00 AM</p>
-            <img class="day-forecast__icon" src="assets/icons/cloudy.svg" alt="weather-icon">
-            <p class="day-forecast__temp">25&deg;</p>
-          </div>
-          <div class="day-forecast__data 9:00AM">
-            <p class="day-forecast__time">9:00 AM</p>
-            <img class="day-forecast__icon" src="assets/icons/partly-cloudy-day.svg" alt="weather-icon">
-            <p class="day-forecast__temp">28&deg;</p>
-          </div>
-          <div class="day-forecast__data 12:00PM">
-            <p class="day-forecast__time">12:00 AM</p>
-            <img class="day-forecast__icon" src="assets/icons/rainy.svg" alt="weather-icon">
-            <p class="day-forecast__temp">33&deg;</p>
-          </div>
-          <div class="day-forecast__data 3:00PM">
-            <p class="day-forecast__time">9:00 AM</p>
-            <img class="day-forecast__icon" src="assets/icons/clear-day.svg" alt="weather-icon">
-            <p class="day-forecast__temp">34&deg;</p>
-          </div>
-          <div class="day-forecast__data 6:00PM">
-            <p class="day-forecast__time">9:00 AM</p>
-            <img class="day-forecast__icon" src="assets/icons/partly-cloudy-day.svg" alt="weather-icon">
-            <p class="day-forecast__temp">28&deg;</p>
-          </div>
-          <div class="day-forecast__data 9:00PM">
-            <p class="day-forecast__time">9:00 AM</p>
-            <img class="day-forecast__icon" src="assets/icons/partly-cloudy-night.svg" alt="weather-icon">
-            <p class="day-forecast__temp">24&deg;</p>
-          </div>
-        </div>
-      </div>
-      <!-- Today's Forecast ends -->
-
-      <!-- Air Conditions -->
-      <div class="air-conditions">
-        <h2 class="air-conditions__text">Air Conditions</h2>
-        <div class="air-conditions__container">
-          <div class="air-conditions__data">
-            <div class="reel-feel">
-              <span class="reel-feel__info-box">
-                <img class="thermometer__icon" src="assets/icons/thermometer.svg" alt="thermometer-icon">
-                <p class="reel-feel__text">Real Feel</p>
-              </span>
-              <h2 class="reel-feel__value">30&deg;</h2>
-            </div>
-            <div class="chance-of-rain">
-              <span class="chance-of-rain__info-box">
-                <img class="rain__icon" src="assets/icons/raindrop.svg" alt="raindrop icon">
-                <p class="rain__text">Chance of rain</p>
-              </span>
-              <h2 class="rain__percentage">0%</h2>
-            </div>
-          </div>
-          <div class="air-conditions__data">
-            <div class="wind-speed">
-              <span class="wind-speed__info-box">
-                <img class="wind-speed__icon" src="assets/icons/wind-beaufort-0.svg" alt="wind-icon">
-                <p class="wind-text">Wind Speed</p>
-              </span>
-              <h2 class="wind-speed__value">0.2 km/h</h2>
-            </div>
-            <div class="uv-index">
-              <span class="uv-index__info-box">
-                <img class="uv__icon" src="assets/icons/uv-index.svg" alt="sun">
-                <p class="uv-text">UV Index</p>
-              </span>
-              <h2 class="uv-index__value">3</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Air conditions ends -->
 
       <!-- Cities list -->
       <ul class="city-list hidden">
@@ -414,5 +420,6 @@
       </div>
     </div>
   </main>
+  <script src="app.js"></script>
 </body>
 </html>

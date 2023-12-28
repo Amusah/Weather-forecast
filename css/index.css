@@ -69,6 +69,9 @@ main {
 .navbar .nav-logo img {
   width: 5rem;
 }
+.navbar .nav-toggler {
+  display: none;
+}
 .navbar .nav-links {
   height: 60vh;
   width: 100%;
@@ -109,14 +112,14 @@ main {
   fill: #cccccc;
 }
 
-.current-weather-container {
+.main-container {
   width: 60%;
   margin-left: 2rem;
   /************ Current weather info ***********/
   /*********** Today's forecast ***********/
   /********** Air conditions ***********/
 }
-.current-weather-container input {
+.main-container input {
   width: 100%;
   height: 4rem;
   border-radius: 0.7rem;
@@ -128,52 +131,52 @@ main {
   color: #161A30;
   color: #fff;
 }
-.current-weather-container input:focus {
+.main-container input:focus {
   outline: none;
 }
-.current-weather-container input::placeholder {
+.main-container input::placeholder {
   color: #d9d9d9;
 }
-.current-weather-container .current-weather-info {
+.main-container .current-weather-info {
   display: flex;
   justify-content: space-between;
 }
-.current-weather-container .current-weather-info .current-weather-info__text {
+.main-container .current-weather-info .current-weather-info__text {
   padding: 4rem;
 }
-.current-weather-container .current-weather-info .current-weather-info__text .city-name {
+.main-container .current-weather-info .current-weather-info__text .city-name {
   font-size: 3.8rem;
   font-weight: 600;
   color: #fff;
 }
-.current-weather-container .current-weather-info .current-weather-info__text span p {
+.main-container .current-weather-info .current-weather-info__text span p {
   font-size: 1.8rem;
   font-weight: 400;
   color: #cccccc;
   padding: 1.5rem 0;
 }
-.current-weather-container .current-weather-info .current-weather-info__text .current-temp {
+.main-container .current-weather-info .current-weather-info__text .current-temp {
   font-size: 4.8rem;
   font-weight: 700;
   color: #fff;
   font-size: 6rem;
   padding: 2rem 0;
 }
-.current-weather-container .current-weather-info .current-weather-info__icon-1 {
+.main-container .current-weather-info .current-weather-info__icon-1 {
   display: none;
   width: 25rem;
 }
-.current-weather-container .current-weather-info .current-weather-info__icon {
+.main-container .current-weather-info .current-weather-info__icon {
   width: 25rem;
 }
-.current-weather-container .day-forecast {
+.main-container .day-forecast {
   min-height: 25vh;
   border-radius: 2rem;
   width: 100%;
   margin-bottom: 2rem;
   background: rgba(255, 255, 255, 0.2);
 }
-.current-weather-container .day-forecast .day-forecast__text {
+.main-container .day-forecast .day-forecast__text {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-size: 1.8rem;
@@ -181,40 +184,40 @@ main {
   color: #fff;
   padding: 2rem;
 }
-.current-weather-container .day-forecast .day-forecast__container {
+.main-container .day-forecast .day-forecast__container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding: 0 2rem;
 }
-.current-weather-container .day-forecast .day-forecast__data {
+.main-container .day-forecast .day-forecast__data {
   text-align: center;
   padding-right: 0 2rem;
   width: 16.7%;
 }
-.current-weather-container .day-forecast .day-forecast__data:not(:last-child) {
+.main-container .day-forecast .day-forecast__data:not(:last-child) {
   border-right: 1px solid #fff;
 }
-.current-weather-container .day-forecast .day-forecast__data .day-forecast__time {
+.main-container .day-forecast .day-forecast__data .day-forecast__time {
   font-size: 1.8rem;
   font-weight: 400;
   color: #fff;
 }
-.current-weather-container .day-forecast .day-forecast__data .day-forecast__icon {
+.main-container .day-forecast .day-forecast__data .day-forecast__icon {
   width: 5rem;
 }
-.current-weather-container .day-forecast .day-forecast__data .day-forecast__temp {
+.main-container .day-forecast .day-forecast__data .day-forecast__temp {
   font-size: 2.8rem;
   font-weight: 600;
   color: #fff;
 }
-.current-weather-container .air-conditions {
+.main-container .air-conditions {
   border-radius: 2rem;
   padding: 3.8rem 2rem;
   width: 100%;
   background: rgba(255, 255, 255, 0.2);
 }
-.current-weather-container .air-conditions .air-conditions__text {
+.main-container .air-conditions .air-conditions__text {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   padding: 1rem 2rem;
@@ -222,30 +225,30 @@ main {
   font-weight: 500;
   color: #fff;
 }
-.current-weather-container .air-conditions .air-conditions__container {
+.main-container .air-conditions .air-conditions__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 90%;
   margin: 0 auto;
 }
-.current-weather-container .air-conditions .air-conditions__data .reel-feel__info-box, .current-weather-container .air-conditions .air-conditions__data .chance-of-rain__info-box,
-.current-weather-container .air-conditions .air-conditions__data .wind-speed__info-box, .current-weather-container .air-conditions .air-conditions__data .uv-index__info-box {
+.main-container .air-conditions .air-conditions__data .reel-feel__info-box, .main-container .air-conditions .air-conditions__data .chance-of-rain__info-box,
+.main-container .air-conditions .air-conditions__data .wind-speed__info-box, .main-container .air-conditions .air-conditions__data .uv-index__info-box {
   display: flex;
   align-items: center;
 }
-.current-weather-container .air-conditions .air-conditions__data .thermometer__icon, .current-weather-container .air-conditions .air-conditions__data .rain__icon,
-.current-weather-container .air-conditions .air-conditions__data .wind-speed__icon, .current-weather-container .air-conditions .air-conditions__data .uv__icon {
+.main-container .air-conditions .air-conditions__data .thermometer__icon, .main-container .air-conditions .air-conditions__data .rain__icon,
+.main-container .air-conditions .air-conditions__data .wind-speed__icon, .main-container .air-conditions .air-conditions__data .uv__icon {
   width: 5rem;
 }
-.current-weather-container .air-conditions .air-conditions__data .reel-feel__text, .current-weather-container .air-conditions .air-conditions__data .rain__text,
-.current-weather-container .air-conditions .air-conditions__data .wind-text, .current-weather-container .air-conditions .air-conditions__data .uv-text {
+.main-container .air-conditions .air-conditions__data .reel-feel__text, .main-container .air-conditions .air-conditions__data .rain__text,
+.main-container .air-conditions .air-conditions__data .wind-text, .main-container .air-conditions .air-conditions__data .uv-text {
   font-size: 1.8rem;
   font-weight: 500;
   color: #fff;
 }
-.current-weather-container .air-conditions .air-conditions__data .reel-feel__value, .current-weather-container .air-conditions .air-conditions__data .rain__percentage,
-.current-weather-container .air-conditions .air-conditions__data .wind-speed__value, .current-weather-container .air-conditions .air-conditions__data .uv-index__value {
+.main-container .air-conditions .air-conditions__data .reel-feel__value, .main-container .air-conditions .air-conditions__data .rain__percentage,
+.main-container .air-conditions .air-conditions__data .wind-speed__value, .main-container .air-conditions .air-conditions__data .uv-index__value {
   padding-left: 5rem;
   font-size: 2.8rem;
   font-weight: 600;
@@ -641,67 +644,67 @@ main {
   .navbar .nav-links .nav-link__item .nav-link__text {
     font-size: 1.5rem;
   }
-  .current-weather-container {
+  .main-container {
     /************ Current weather info ***********/
     /*********** Today's forecast ***********/
     /********** Air conditions ***********/
   }
-  .current-weather-container .current-weather-info .current-weather-info__text {
+  .main-container .current-weather-info .current-weather-info__text {
     padding: 3rem;
   }
-  .current-weather-container .current-weather-info .current-weather-info__text .current-temp {
+  .main-container .current-weather-info .current-weather-info__text .current-temp {
     font-size: 4.8rem;
     font-weight: 700;
     color: #fff;
     font-size: 5rem;
   }
-  .current-weather-container .current-weather-info .current-weather-info__icon {
+  .main-container .current-weather-info .current-weather-info__icon {
     width: 19rem;
   }
-  .current-weather-container .day-forecast {
+  .main-container .day-forecast {
     min-height: 20vh;
   }
-  .current-weather-container .day-forecast .day-forecast__text {
+  .main-container .day-forecast .day-forecast__text {
     font-size: 1.6rem;
   }
-  .current-weather-container .day-forecast .day-forecast__container {
+  .main-container .day-forecast .day-forecast__container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 0 2rem;
   }
-  .current-weather-container .day-forecast .day-forecast__data .day-forecast__time {
+  .main-container .day-forecast .day-forecast__data .day-forecast__time {
     font-size: 1.5rem;
   }
-  .current-weather-container .day-forecast .day-forecast__data .day-forecast__icon {
+  .main-container .day-forecast .day-forecast__data .day-forecast__icon {
     width: 3.5rem;
   }
-  .current-weather-container .day-forecast .day-forecast__data .day-forecast__temp {
+  .main-container .day-forecast .day-forecast__data .day-forecast__temp {
     font-size: 2rem;
   }
-  .current-weather-container .air-conditions {
+  .main-container .air-conditions {
     min-height: 25vh;
     padding: 2rem;
   }
-  .current-weather-container .air-conditions .air-conditions__text {
+  .main-container .air-conditions .air-conditions__text {
     font-size: 1.6rem;
   }
-  .current-weather-container .air-conditions .air-conditions__data .thermometer__icon,
-  .current-weather-container .air-conditions .air-conditions__data .rain__icon,
-  .current-weather-container .air-conditions .air-conditions__data .wind-speed__icon,
-  .current-weather-container .air-conditions .air-conditions__data .uv__icon {
+  .main-container .air-conditions .air-conditions__data .thermometer__icon,
+  .main-container .air-conditions .air-conditions__data .rain__icon,
+  .main-container .air-conditions .air-conditions__data .wind-speed__icon,
+  .main-container .air-conditions .air-conditions__data .uv__icon {
     width: 4rem;
   }
-  .current-weather-container .air-conditions .air-conditions__data .reel-feel__text,
-  .current-weather-container .air-conditions .air-conditions__data .rain__text,
-  .current-weather-container .air-conditions .air-conditions__data .wind-text,
-  .current-weather-container .air-conditions .air-conditions__data .uv-text {
+  .main-container .air-conditions .air-conditions__data .reel-feel__text,
+  .main-container .air-conditions .air-conditions__data .rain__text,
+  .main-container .air-conditions .air-conditions__data .wind-text,
+  .main-container .air-conditions .air-conditions__data .uv-text {
     font-size: 1.5rem;
   }
-  .current-weather-container .air-conditions .air-conditions__data .reel-feel__value,
-  .current-weather-container .air-conditions .air-conditions__data .rain__percentage,
-  .current-weather-container .air-conditions .air-conditions__data .wind-speed__value,
-  .current-weather-container .air-conditions .air-conditions__data .uv-index__value {
+  .main-container .air-conditions .air-conditions__data .reel-feel__value,
+  .main-container .air-conditions .air-conditions__data .rain__percentage,
+  .main-container .air-conditions .air-conditions__data .wind-speed__value,
+  .main-container .air-conditions .air-conditions__data .uv-index__value {
     padding-left: 5rem;
     font-size: 2rem;
   }
@@ -744,81 +747,60 @@ main {
   .navbar .nav-links .nav-link__item .nav-link__text {
     font-size: 1.5rem;
   }
-  .navbar .nav-links .nav-link__item:hover .nav-link__text {
-    color: #cccccc;
-  }
-  .navbar .nav-links .nav-link__item:hover svg {
-    fill: #cccccc;
-    stroke: #cccccc;
-  }
-  .navbar .nav-links .nav-link__item:hover svg g {
-    fill: #cccccc;
-  }
   /************ Current weather info ***********/
-  .current-weather-container {
+  .main-container {
     /*********** Today's forecast ***********/
     /********** Air conditions ***********/
   }
-  .current-weather-container .current-weather-info .current-weather-info__text {
+  .main-container .current-weather-info .current-weather-info__text {
     padding: 3rem;
   }
-  .current-weather-container .current-weather-info .current-weather-info__text .city-name {
+  .main-container .current-weather-info .current-weather-info__text .city-name {
     font-size: 3rem;
   }
-  .current-weather-container .current-weather-info .current-weather-info__text span p {
+  .main-container .current-weather-info .current-weather-info__text span p {
     font-size: 1.5rem;
   }
-  .current-weather-container .current-weather-info .current-weather-info__text .current-temp {
+  .main-container .current-weather-info .current-weather-info__text .current-temp {
     font-size: 4.5rem;
   }
-  .current-weather-container .current-weather-info .current-weather-info__icon {
+  .main-container .current-weather-info .current-weather-info__icon {
     width: 16rem;
   }
-  .current-weather-container .day-forecast .day-forecast__text {
+  .main-container .day-forecast .day-forecast__text {
     font-size: 1.6rem;
   }
-  .current-weather-container .day-forecast .day-forecast__container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0 2rem;
-  }
-  .current-weather-container .day-forecast .day-forecast__data {
-    text-align: center;
-    padding-right: 0 2rem;
-    width: 16.7%;
-  }
-  .current-weather-container .day-forecast .day-forecast__data .day-forecast__time {
+  .main-container .day-forecast .day-forecast__data .day-forecast__time {
     font-size: 1.4rem;
   }
-  .current-weather-container .day-forecast .day-forecast__data .day-forecast__icon {
+  .main-container .day-forecast .day-forecast__data .day-forecast__icon {
     width: 3.5rem;
   }
-  .current-weather-container .day-forecast .day-forecast__data .day-forecast__temp {
+  .main-container .day-forecast .day-forecast__data .day-forecast__temp {
     font-size: 1.8rem;
     font-weight: 600;
     color: #fff;
     font-size: 1.8rem;
   }
-  .current-weather-container .air-conditions .air-conditions__text {
+  .main-container .air-conditions .air-conditions__text {
     font-size: 1.6rem;
   }
-  .current-weather-container .air-conditions .air-conditions__data .thermometer__icon,
-  .current-weather-container .air-conditions .air-conditions__data .rain__icon,
-  .current-weather-container .air-conditions .air-conditions__data .wind-speed__icon,
-  .current-weather-container .air-conditions .air-conditions__data .uv__icon {
+  .main-container .air-conditions .air-conditions__data .thermometer__icon,
+  .main-container .air-conditions .air-conditions__data .rain__icon,
+  .main-container .air-conditions .air-conditions__data .wind-speed__icon,
+  .main-container .air-conditions .air-conditions__data .uv__icon {
     width: 4rem;
   }
-  .current-weather-container .air-conditions .air-conditions__data .reel-feel__text,
-  .current-weather-container .air-conditions .air-conditions__data .rain__text,
-  .current-weather-container .air-conditions .air-conditions__data .wind-text,
-  .current-weather-container .air-conditions .air-conditions__data .uv-text {
+  .main-container .air-conditions .air-conditions__data .reel-feel__text,
+  .main-container .air-conditions .air-conditions__data .rain__text,
+  .main-container .air-conditions .air-conditions__data .wind-text,
+  .main-container .air-conditions .air-conditions__data .uv-text {
     font-size: 1.5rem;
   }
-  .current-weather-container .air-conditions .air-conditions__data .reel-feel__value,
-  .current-weather-container .air-conditions .air-conditions__data .rain__percentage,
-  .current-weather-container .air-conditions .air-conditions__data .wind-speed__value,
-  .current-weather-container .air-conditions .air-conditions__data .uv-index__value {
+  .main-container .air-conditions .air-conditions__data .reel-feel__value,
+  .main-container .air-conditions .air-conditions__data .rain__percentage,
+  .main-container .air-conditions .air-conditions__data .wind-speed__value,
+  .main-container .air-conditions .air-conditions__data .uv-index__value {
     padding-left: 5rem;
     font-size: 1.9rem;
   }
@@ -841,5 +823,128 @@ main {
   .future-forecast .future-forecast__container .future-forecast__temp,
   .future-forecast .future-forecast__container .future-forecast__condition {
     font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .navbar .nav-links .nav-link__item svg {
+    width: 3rem;
+    height: 3.5rem;
+  }
+  .navbar .nav-links .nav-link__item .nav-link__text {
+    font-size: 1.4rem;
+  }
+  /************ Current weather info ***********/
+  .main-container {
+    /*********** Today's forecast ***********/
+    /********** Air conditions ***********/
+  }
+  .main-container .current-weather-info .current-weather-info__text {
+    padding: 2.5rem;
+  }
+  .main-container .current-weather-info .current-weather-info__text .current-temp {
+    font-size: 4.3rem;
+  }
+  .main-container .current-weather-info .current-weather-info__icon {
+    width: 14rem;
+  }
+  .main-container .day-forecast .day-forecast__text {
+    font-size: 1.5rem;
+  }
+  .main-container .day-forecast .day-forecast__container {
+    padding: 0 1.8rem;
+  }
+  .main-container .day-forecast .day-forecast__data .day-forecast__time {
+    font-size: 1.3rem;
+  }
+  .main-container .day-forecast .day-forecast__data .day-forecast__icon {
+    width: 3.3rem;
+  }
+  .main-container .air-conditions .air-conditions__text {
+    font-size: 1.5rem;
+  }
+  /*********** 7-Day-Forecast ***********/
+  .future-forecast .future-forecast__text {
+    font-size: 1.4rem;
+  }
+  .future-forecast .future-forecast__container .future-forecast__day {
+    font-size: 1.8rem;
+  }
+  .future-forecast .future-forecast__container .future-forecast__info .future-forecast__icon {
+    width: 3.4rem;
+  }
+  .future-forecast .future-forecast__container .future-forecast__temp,
+  .future-forecast .future-forecast__container .future-forecast__condition {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 670px) {
+  main {
+    position: relative;
+    padding: 3rem;
+  }
+  .toggle {
+    transform: rotateY(-180deg);
+  }
+  .scale-nav {
+    width: 90% !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 2rem !important;
+  }
+  .scale-nav .nav-links {
+    height: auto;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly;
+  }
+  .scale-nav .nav-links .nav-link__item svg {
+    width: 2rem !important;
+    height: 2.5rem !important;
+  }
+  .navbar {
+    position: fixed;
+    transition: all 0.2s ease;
+    justify-content: space-around;
+    bottom: 3%;
+    left: 5%;
+    right: 0;
+    z-index: 5;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 30%;
+  }
+  .navbar .nav-logo {
+    display: none;
+  }
+  .navbar .nav-toggler {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    transition: all 1s ease-out;
+    padding: 1.5rem;
+  }
+  .navbar .nav-toggler .nav-toggler__icon {
+    width: 1.3rem;
+  }
+  .navbar .nav-links {
+    display: none;
+  }
+  .navbar .nav-links .nav-link__item svg {
+    width: 3rem;
+    height: 3.5rem;
+  }
+  .navbar .nav-links .nav-link__item .nav-link__text {
+    font-size: 1.4rem;
+  }
+  /************ Current weather info ***********/
+  .main-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  /*********** 7-Day-Forecast ***********/
+  .column {
+    display: none;
   }
 }

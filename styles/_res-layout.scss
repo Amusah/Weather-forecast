@@ -38,7 +38,7 @@
       }
     }
 
-  .current-weather-container {
+    .main-container {
   
       /************ Current weather info ***********/
       .current-weather-info {
@@ -179,21 +179,13 @@
         .nav-link__text {
           font-size: 1.5rem;
         }
-
-        &:hover .nav-link__text {
-          color: darken($white, 20);
-        }
-
-        &:hover svg {
-          @include svg-hover();
-        }
       }
     }
   }
 
 
 /************ Current weather info ***********/
-     .current-weather-container {
+    .main-container{
       .current-weather-info {
   
         .current-weather-info__text {
@@ -226,16 +218,16 @@
         }
   
         .day-forecast__container {
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
-          padding: 0 2rem;
+          // display: flex;
+          // justify-content: space-evenly;
+          // align-items: center;
+          // padding: 0 2rem;
         }
   
         .day-forecast__data {
-          text-align: center;
-          padding-right: 0 2rem;
-          width: 16.7%;
+          // text-align: center;
+          // padding-right: 0 2rem;
+          // width: 16.7%;
   
           // &:not(:last-child) {
           //   border-right: 1px solid $white;
@@ -333,4 +325,197 @@
           }
         }
       }
+}
+
+
+@media screen and (max-width: 700px) {
+
+  .navbar {
+    // height: 82vh;
+
+    // .nav-logo {
+
+    //   img {
+    //     width: 4.5rem;
+    //   }
+    // }
+
+    .nav-links {
+
+      .nav-link__item {
+
+        svg {
+          width: 3rem;
+          height: 3.5rem;
+        }
+
+        .nav-link__text {
+          font-size: 1.4rem;
+        }
+
+        // &:hover .nav-link__text {
+        //   color: darken($white, 20);
+        // }
+
+        // &:hover svg {
+        //   @include svg-hover();
+        // }
+      }
+    }
+  }
+
+
+  /************ Current weather info ***********/
+  .main-container {
+    .current-weather-info {
+
+      .current-weather-info__text {
+        padding: 2.5rem;
+        .current-temp {
+          font-size: 4.3rem;
+        }
+      }
+
+      .current-weather-info__icon {
+        width: 14rem;
+      }
+    }
+
+    /*********** Today's forecast ***********/
+    .day-forecast {
+      .day-forecast__text {
+        font-size: 1.5rem;
+      }
+
+      .day-forecast__container {
+        padding: 0 1.8rem;
+      }
+
+      .day-forecast__data {
+        .day-forecast__time {
+          font-size: 1.3rem;
+        }
+
+        .day-forecast__icon {
+          width: 3.3rem;
+        }
+      }
+    }
+
+    /********** Air conditions ***********/
+    .air-conditions {
+      .air-conditions__text {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  /*********** 7-Day-Forecast ***********/
+  .future-forecast {
+    .future-forecast__text {
+      font-size: 1.4rem;
+    }
+
+    .future-forecast__container {
+      .future-forecast__day {
+        font-size: 1.8rem;
+      }
+
+      .future-forecast__info .future-forecast__icon {
+        width: 3.4rem;
+      }
+
+      .future-forecast__temp,
+      .future-forecast__condition {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 670px){
+  main{
+    position: relative;
+    padding: 3rem;
+  }
+
+  .toggle {
+    transform: rotateY(-180deg);
+  }
+  .scale-nav {
+    width: 90% !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 2rem !important;
+    
+    .nav-links {
+      height: auto;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-evenly;
+      
+      .nav-link__item {
+        svg {
+          width: 2rem !important;
+          height: 2.5rem !important;
+        }
+      }
+    }
+  }
+
+  .navbar {
+    position: fixed;
+    transition: all .2s ease;
+    justify-content: space-around;
+    bottom: 3%;
+    left: 5%;
+    right: 0;
+    z-index: 5;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 30%;
+  
+    .nav-logo {
+      display: none;
+    }
+
+    .nav-toggler{
+      position: relative;
+      display: block;
+      cursor: pointer;
+      text-align: center;
+      transition: all 1s ease-out;
+      padding: 1.5rem;
+      .nav-toggler__icon{
+        width: 1.3rem;
+      }
+    }
+
+    .nav-links {
+      display: none;
+      .nav-link__item {
+        svg {
+          width: 3rem;
+          height: 3.5rem;
+        }
+
+        .nav-link__text {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  
+  
+    /************ Current weather info ***********/
+    .main-container {
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    /*********** 7-Day-Forecast ***********/
+    .column{
+      display: none;
+    }
 }
