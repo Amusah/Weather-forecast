@@ -519,3 +519,112 @@
       display: none;
     }
 }
+
+@media screen and (max-width: 540px) and (max-height: 720px){
+  .navbar {
+      bottom: 0;
+      left: 0;
+    }
+}
+
+@media screen and (max-width: 390px){
+  .navbar{
+    bottom: 0;
+    left: 0;
+  }
+    
+    /************ Current weather info ***********/
+    .main-container {
+      .current-weather-info {
+        display: block;
+        text-align: center;
+        .current-weather-info__text {
+          // padding: 2.5rem;
+  
+          .current-temp {
+            // font-size: 4.3rem;
+            padding: 1.5rem 0;
+          }
+        }
+  
+        .current-weather-info__icon {
+          display: none;
+          // width: 14rem;
+          &-1{
+            display: block;
+            width: 15rem;
+            margin: 0 auto;
+          }
+        }
+      }
+  
+      /*********** Today's forecast ***********/
+      .day-forecast {
+        min-height: 25vh;
+        // .day-forecast__text {
+        //   font-size: 1.5rem;
+        // }
+  
+        .day-forecast__container {
+          padding: 0;
+          justify-content: space-around;
+        }
+  
+        .day-forecast__data {
+          width: 33%;
+          &:nth-last-child(-n + 3){
+            display: none;
+          }
+          &:nth-child(3){
+            border: none;
+          }
+          .day-forecast__time {
+            font-size: 1.5rem;
+          }
+  
+          .day-forecast__icon {
+            width: 3.3rem;
+          }
+        }
+      }
+  
+      /********** Air conditions ***********/
+      .air-conditions{
+        // padding: 2rem 1.5rem;
+        .air-conditions__text{
+          font-size: 1.5rem;
+          padding: 1rem 0;
+        }
+
+        .air-conditions__container{
+          // justify-content: space-evenly;
+          align-items: center;
+          // padding: 0 2rem;
+          width: 90%;
+          margin: 0 auto;
+        }
+      }
+    }
+  
+    /*********** 7-Day-Forecast ***********/
+    .future-forecast {
+      .future-forecast__text {
+        font-size: 1.4rem;
+      }
+  
+      .future-forecast__container {
+        .future-forecast__day {
+          font-size: 1.8rem;
+        }
+  
+        .future-forecast__info .future-forecast__icon {
+          width: 3.4rem;
+        }
+  
+        .future-forecast__temp,
+        .future-forecast__condition {
+          font-size: 1.5rem;
+        }
+      }
+    }
+}
