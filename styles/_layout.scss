@@ -75,6 +75,7 @@ main{
 .main-container{
   width: 60%;
   margin-left: 2rem;
+  position: relative;
   // overflow-y: scroll;
 
   // Input field
@@ -97,13 +98,25 @@ main{
     }
   }
 
-  .spinner{
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    border: .4rem solid rgba($white, 0.2);
-    border-top: 4px solid $white;
-    animation: spin 1s linear infinite;
+  .loading{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    @include background();
+    .spinner {
+      position: absolute;
+      // top: -40%;
+      // left: 50%;      
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      border: .4rem solid rgba($white, 0.2);
+      border-top: .4rem solid $white;
+      margin-top: 18%;
+      animation: spin 1s linear infinite;
+    }
   }
   /************ Current weather info ***********/
   .current-weather-info{

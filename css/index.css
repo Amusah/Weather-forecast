@@ -115,6 +115,7 @@ main {
 .main-container {
   width: 60%;
   margin-left: 2rem;
+  position: relative;
   /************ Current weather info ***********/
   /*********** Today's forecast ***********/
   /********** Air conditions ***********/
@@ -137,12 +138,22 @@ main {
 .main-container input::placeholder {
   color: #d9d9d9;
 }
-.main-container .spinner {
+.main-container .loading {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+}
+.main-container .loading .spinner {
+  position: absolute;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
   border: 0.4rem solid rgba(255, 255, 255, 0.2);
-  border-top: 4px solid #fff;
+  border-top: 0.4rem solid #fff;
+  margin-top: 18%;
   animation: spin 1s linear infinite;
 }
 .main-container .current-weather-info {
