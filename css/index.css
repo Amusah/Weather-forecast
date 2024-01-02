@@ -137,6 +137,14 @@ main {
 .main-container input::placeholder {
   color: #d9d9d9;
 }
+.main-container .spinner {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 0.4rem solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid #fff;
+  animation: spin 1s linear infinite;
+}
 .main-container .current-weather-info {
   display: flex;
   justify-content: space-between;
@@ -310,6 +318,15 @@ main {
   font-size: 2.3rem;
 }
 
+/*********************Animation***********************/
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /*********** Cities ***********/
 .city-list {
   margin-top: 2rem;

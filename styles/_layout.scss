@@ -97,6 +97,14 @@ main{
     }
   }
 
+  .spinner{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: .4rem solid rgba($white, 0.2);
+    border-top: 4px solid $white;
+    animation: spin 1s linear infinite;
+  }
   /************ Current weather info ***********/
   .current-weather-info{
     // width: 100%;
@@ -287,3 +295,14 @@ main{
     }
   }
 }
+
+/*********************Animation***********************/
+ @keyframes spin {
+   0% {
+     transform: rotate(0deg);
+   }
+
+   100% {
+     transform: rotate(360deg);
+   }
+ }
