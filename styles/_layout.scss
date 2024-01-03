@@ -309,6 +309,32 @@ main{
   }
 }
 
+.msg-box{
+  position: absolute;
+  right: 4%;
+  width: 25%;
+  height: 7rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  @include background();
+  animation: moveInRight .5s ease-in;
+
+  .msg-head{
+    padding: 1rem;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    @include font-xsm(500, red);
+    font-size: 1.5rem;
+  }
+
+  .msg{
+    padding: 0 2rem;
+    font-size: 1.7rem;
+    color: rgb(182, 4, 93);
+    width: auto;
+  }
+}
+
 /*********************Animation***********************/
  @keyframes spin {
    0% {
@@ -318,4 +344,21 @@ main{
    100% {
      transform: rotate(360deg);
    }
+ }
+
+ @keyframes moveInRight{
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  // 80%{
+  //   opacity: 1;
+  //   transform: translateX(-5rem);
+  // }
+
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
  }
