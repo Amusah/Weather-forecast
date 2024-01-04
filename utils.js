@@ -18,7 +18,7 @@ export default class Utilities{
     const messageBox = document.querySelector('.msg-box');
     const html = `
       <h2 class="msg-head">${msg1}</h2>
-      <p class="msg">${msg2 ? msg2 : ''}</p>
+      <p class="msg">${msg2 || ''}</p>
     `;
     messageBox.insertAdjacentHTML('beforeend', html);
     messageBox.classList.toggle('hidden');
