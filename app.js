@@ -10,7 +10,8 @@ const utils = new Utilities();
 
 class App {
   #apiKeys = {
-    weatherApi : 'TJJ852M4XXSA9Y5XRWETDERQK',
+    currentForecastApi: 'bbb40dd6bd47451d83f140902230306',
+    futureForecastApi : 'TJJ852M4XXSA9Y5XRWETDERQK',
     geoCodeApi : '788221805148350681091x86622'
   }
   currentCity;
@@ -38,17 +39,12 @@ class App {
       const { latitude, longitude } = pos.coords;
       console.log(latitude, longitude);
       this.reverseGeocode(latitude, longitude)
-      .then(data => this.getWeatherForcast('Takoradi'))
+      .then(data => this.getWeatherForcast(data.city))
       .then(weatherData => console.log(weatherData))
       .catch(err => {
+        console.log(err.message)
         utils.throwError(err.message, 'Something went wrong')
       })
-      // Reverse Geocoding
-      // this.fetchAndParseData(`https://geocode.xyz/${latitude},${longitude}?geoit=json&auth=${this.#apiKeys.geoCodeApi}`)
-      // .then(data => {
-      //   console.log(data.city)
-      //   currentCity = data.city;
-      // })
       
     }, (err) => {
       if(err)
@@ -56,33 +52,28 @@ class App {
     });
   }
 
-  // async reverseGeocode(lat, lon){
-  //   try {
-  //     const response = await fetch(`https://geocode.xyz/${lat},${lon}?geoit=json&auth=${this.#apiKeys.geoCodeApi}`)
-  //     const data = await response.json();
-  //     return data;
-  //   } catch (error) {
-  //     throw error
-  //   }
-  // }
-
   reverseGeocode(lat, lon){
     return this.fetchAndParseData(`https://geocode.xyz/${lat},${lon}?geoit=json&auth=${this.#apiKeys.geoCodeApi}`)
   }
 
-  getWeatherForcast(city){
-    return this.fetchAndParseData(`
-        https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${this.#apiKeys.weatherApi}&contentType=json
-      `)
+  async getWeatherForcast(city){
+    let curData = this.fetchAndParseData(`http://api.weatherapi.com/v1/forecast.json?key=${this.#apiKeys.currentForecastApi}&q=${city}&aqi=no`)
+    let futureData = this.fetchAndParseData(`
+        https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${this.#apiKeys.futureForecastApi}&contentType=json
+      `);
+
+    return await Promise.all([curData, futureData]);
   }
 
 }
 
 const weatherApp = new App();
-weatherApp.getCurrentLocation();
+// weatherApp.getCurrentLocation();
 // https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Takoradi?unitGroup=metric&key=TJJ852M4XXSA9Y5XRWETDERQK&contentType=json
 // 'TJJ852M4XXSA9Y5XRWETDERQK'
 
 // goecode api
 // '788221805148350681091x86622'
 // 'https://geocode.xyz/51.50354,-0.12768?geoit=xml&auth=your_api_key'
+// http://api.weatherapi.com/v1/current.json?key=bbb40dd6bd47451d83f140902230306&q=Takoradi&aqi=no
+

@@ -119,11 +119,12 @@
       <div class="main-container">
         <input placeholder="Search for cities" type="text">
         <!-- current Forecast data -->
+        <div class="loading">
+          <div class="spinner"></div>
+        </div>
+        <div class="autocomplete-container hidden"></div>
         <div class="current-weather-container">
           <!-- <input placeholder="Search for cities" type="text"> -->
-          <div class="loading">
-            <div class="spinner"></div>
-          </div>
           <div class="current-weather-info">
             <div class="current-weather-info__text">
               <span>
@@ -153,22 +154,22 @@
                 <p class="day-forecast__temp">28&deg;</p>
               </div>
               <div class="day-forecast__data 12:00PM">
-                <p class="day-forecast__time">12:00 AM</p>
+                <p class="day-forecast__time">12:00 PM</p>
                 <img class="day-forecast__icon" src="assets/icons/rainy.svg" alt="weather-icon">
                 <p class="day-forecast__temp">33&deg;</p>
               </div>
               <div class="day-forecast__data 3:00PM">
-                <p class="day-forecast__time">9:00 AM</p>
+                <p class="day-forecast__time">3:00 PM</p>
                 <img class="day-forecast__icon" src="assets/icons/clear-day.svg" alt="weather-icon">
                 <p class="day-forecast__temp">34&deg;</p>
               </div>
               <div class="day-forecast__data 6:00PM">
-                <p class="day-forecast__time">9:00 AM</p>
+                <p class="day-forecast__time">9:00 PM</p>
                 <img class="day-forecast__icon" src="assets/icons/partly-cloudy-day.svg" alt="weather-icon">
                 <p class="day-forecast__temp">28&deg;</p>
               </div>
               <div class="day-forecast__data 9:00PM">
-                <p class="day-forecast__time">9:00 AM</p>
+                <p class="day-forecast__time">12:00 AM</p>
                 <img class="day-forecast__icon" src="assets/icons/partly-cloudy-night.svg" alt="weather-icon">
                 <p class="day-forecast__temp">24&deg;</p>
               </div>

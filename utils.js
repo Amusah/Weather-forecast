@@ -23,5 +23,7 @@ export default class Utilities{
     messageBox.insertAdjacentHTML('beforeend', html);
     messageBox.classList.toggle('hidden');
   }
+
+  
   
 }
