@@ -130,9 +130,12 @@ main{
     // width: 100%;
     display: flex;
     justify-content: space-between;
+    min-height: 25vh;
+    transition: all 2s ease-in;
 
     .current-weather-info__text{
       padding: 4rem;
+      transition: transform 2s ease-in;
       .city-name{
         @include font-md(600, $color: $white);
       }

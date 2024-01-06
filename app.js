@@ -40,7 +40,11 @@ class App {
       console.log(latitude, longitude);
       this.reverseGeocode(latitude, longitude)
       .then(data => this.getWeatherForcast(data.city))
-      .then(weatherData => console.log(weatherData))
+      .then(weatherData => {
+        const [currentForecast, futureForecast] = weatherData;
+        console.log(currentForecast);
+        utils.renderCurrentForecast(currentForecast);
+      })
       .catch(err => {
         console.log(err.message)
         utils.throwError(err.message, 'Something went wrong')
@@ -68,7 +72,7 @@ class App {
 }
 
 const weatherApp = new App();
-// weatherApp.getCurrentLocation();
+weatherApp.getCurrentLocation();
 // https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Takoradi?unitGroup=metric&key=TJJ852M4XXSA9Y5XRWETDERQK&contentType=json
 // 'TJJ852M4XXSA9Y5XRWETDERQK'
 

@@ -164,9 +164,12 @@ main {
 .main-container .current-weather-info {
   display: flex;
   justify-content: space-between;
+  min-height: 25vh;
+  transition: all 2s ease-in;
 }
 .main-container .current-weather-info .current-weather-info__text {
   padding: 4rem;
+  transition: transform 2s ease-in;
 }
 .main-container .current-weather-info .current-weather-info__text .city-name {
   font-size: 3.8rem;
