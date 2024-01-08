@@ -1,5 +1,7 @@
-// 'use strict';
+'use strict';
+
 import Utilities from './utils.js';
+import config from './config.js';
 
 
 const navBar = document.querySelector('.navbar');
@@ -7,6 +9,7 @@ const navBar = document.querySelector('.navbar');
 // const navToggler = navBar.querySelector('.nav-toggler');
 
 const utils = new Utilities();
+const helper = new config();
 
 class App {
   #apiKeys = {
@@ -34,16 +37,19 @@ class App {
     let currentCity;
     if(!navigator.geolocation) return;
 
-    return navigator.geolocation.getCurrentPosition(pos => {
+    navigator.geolocation.getCurrentPosition(pos => {
       console.log(pos)
       const { latitude, longitude } = pos.coords;
       console.log(latitude, longitude);
+      utils.toggleSpinner();
       this.reverseGeocode(latitude, longitude)
       .then(data => this.getWeatherForcast(data.city))
       .then(weatherData => {
         const [currentForecast, futureForecast] = weatherData;
-        console.log(currentForecast);
+        console.log(currentForecast, futureForecast);
+        utils.toggleSpinner();
         utils.renderCurrentForecast(currentForecast);
+        utils.renderFutureForecast(futureForecast, currentForecast);
       })
       .catch(err => {
         console.log(err.message)

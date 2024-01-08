@@ -114,6 +114,10 @@ $white: #fff;
   @include background();
 }
 
+.transition{
+  transition: all 2s ease-in;
+}
+
 // p{
 //   @include font-lg(600)
 // }

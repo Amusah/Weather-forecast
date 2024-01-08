@@ -303,11 +303,11 @@ main{
       // width: 35%;
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
-      // text-align: center;
+      // justify-content: center;
+      text-align: center;
 
       .future-forecast__icon {
-        width: 5rem;
+        width: 6rem;
       }
     }
 

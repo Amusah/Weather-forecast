@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <main>
+  <main id="bg">
     <!-- Sidebar menu -->
     <nav class="navbar">
       <div class="nav-logo"><img src="assets/icons/umbrella.svg" alt="logo"></div>
@@ -119,7 +119,7 @@
       <div class="main-container">
         <input placeholder="Search for cities" type="text">
         <!-- current Forecast data -->
-        <div class="loading">
+        <div class="loading hidden">
           <div class="spinner"></div>
         </div>
         <div class="autocomplete-container hidden"></div>
@@ -143,7 +143,7 @@
           <div class="day-forecast">
             <h2 class="day-forecast__text">Today's Forecast</h2>
             <div class="day-forecast__container">
-              <div class="day-forecast__data 6:00AM">
+              <!-- <div class="day-forecast__data 6:00AM">
                 <p class="day-forecast__time">6:00 AM</p>
                 <img class="day-forecast__icon" src="assets/icons/cloudy.svg" alt="weather-icon">
                 <p class="day-forecast__temp">25&deg;</p>
@@ -172,7 +172,7 @@
                 <p class="day-forecast__time">12:00 AM</p>
                 <img class="day-forecast__icon" src="assets/icons/partly-cloudy-night.svg" alt="weather-icon">
                 <p class="day-forecast__temp">24&deg;</p>
-              </div>
+              </div> -->
             </div>
           </div>
           <!-- Today's Forecast ends -->
@@ -181,7 +181,7 @@
           <div class="air-conditions">
             <h2 class="air-conditions__text">Air Conditions</h2>
             <div class="air-conditions__container">
-              <div class="air-conditions__data">
+              <!-- <div class="air-conditions__data">
                 <div class="reel-feel">
                   <span class="reel-feel__info-box">
                     <img class="thermometer__icon" src="assets/icons/thermometer.svg" alt="thermometer-icon">
@@ -212,7 +212,7 @@
                   </span>
                   <h2 class="uv-index__value">3</h2>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
           <!-- Air conditions ends -->
@@ -291,7 +291,7 @@
       <div class="future-forecast bg">
         <h2 class="future-forecast__text ">7-Day-Forecast</h2>
         <div class="future-forecast__container ">
-          <div class="future-forecast__data today+0">
+          <!-- <div class="future-forecast__data today+0">
             <p class="future-forecast__day">Today</p>
             <span class="future-forecast__info">
               <img src="assets/icons/clear-day.svg" alt="weather-icon" class="future-forecast__icon">
@@ -346,7 +346,7 @@
               <p class="future-forecast__condition">Sunny</p>
             </span>
             <p class="future-forecast__temp">36&deg;</p>
-          </div>
+          </div> -->
         </div>
         <!---------------------- city forecast info ----------------------------->
         <div class="city-forecast-container hidden">

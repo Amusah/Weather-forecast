@@ -43,6 +43,10 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
+.transition {
+  transition: all 2s ease-in;
+}
+
 main {
   min-height: 100vh;
   background: url("/assets/img/day.jpg");
@@ -324,10 +328,10 @@ main {
 .future-forecast .future-forecast__container .future-forecast__info {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  text-align: center;
 }
 .future-forecast .future-forecast__container .future-forecast__info .future-forecast__icon {
-  width: 5rem;
+  width: 6rem;
 }
 .future-forecast .future-forecast__container .future-forecast__temp,
 .future-forecast .future-forecast__container .future-forecast__condition {
