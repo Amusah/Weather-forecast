@@ -155,7 +155,7 @@ main {
   border: 0.4rem solid rgba(255, 255, 255, 0.2);
   border-top: 0.4rem solid #fff;
   margin-top: 18%;
-  animation: spin 1s linear infinite;
+  animation: spin 0.7s linear infinite;
 }
 .main-container .autocomplete-container {
   position: absolute;
@@ -243,6 +243,7 @@ main {
   color: #fff;
 }
 .main-container .air-conditions {
+  min-height: 30vh;
   border-radius: 2rem;
   padding: 3.8rem 2rem;
   width: 100%;
@@ -295,9 +296,14 @@ main {
   padding: 5rem 0;
 }
 
+.transition {
+  min-height: 80vh;
+}
+
 .future-forecast {
   border-radius: 2rem;
   padding-bottom: 3rem;
+  min-height: 80vh;
 }
 .future-forecast .future-forecast__text {
   text-transform: uppercase;

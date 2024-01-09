@@ -113,7 +113,7 @@ main{
       border: .4rem solid rgba($white, 0.2);
       border-top: .4rem solid $white;
       margin-top: 18%;
-      animation: spin 1s linear infinite;
+      animation: spin .7s linear infinite;
     }
   }
 
@@ -207,7 +207,7 @@ main{
 
   /********** Air conditions ***********/
   .air-conditions{
-    // min-height: 25vh;
+    min-height: 30vh;
     border-radius: 2rem;
     padding: 3.8rem 2rem;
     width: 100%;
@@ -267,11 +267,14 @@ main{
   }
 }
 
+.transition{
+  min-height: 80vh;
+}
+
 .future-forecast {
   border-radius: 2rem;
   padding-bottom: 3rem;
-  // transition: all 2s ease-in;
-  // min-height: 80vh;
+  min-height: 80vh;
   // @include background();
 
   .future-forecast__text {

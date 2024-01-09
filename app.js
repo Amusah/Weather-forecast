@@ -1,7 +1,7 @@
 'use strict';
 
 import Utilities from './utils.js';
-import config from './config.js';
+import helperFunc from './helper.js';
 
 
 const navBar = document.querySelector('.navbar');
@@ -9,7 +9,7 @@ const navBar = document.querySelector('.navbar');
 // const navToggler = navBar.querySelector('.nav-toggler');
 
 const utils = new Utilities();
-const helper = new config();
+const helper = new helperFunc();
 
 class App {
   #apiKeys = {
@@ -17,7 +17,6 @@ class App {
     futureForecastApi : 'TJJ852M4XXSA9Y5XRWETDERQK',
     geoCodeApi : '788221805148350681091x86622'
   }
-  currentCity;
 
   constructor(){
     navBar.addEventListener('click', utils.toggleNav);
@@ -43,7 +42,7 @@ class App {
       console.log(latitude, longitude);
       utils.toggleSpinner();
       this.reverseGeocode(latitude, longitude)
-      .then(data => this.getWeatherForcast(data.city))
+      .then(data => this.getWeatherForcast('Zamboanga'))
       .then(weatherData => {
         const [currentForecast, futureForecast] = weatherData;
         console.log(currentForecast, futureForecast);

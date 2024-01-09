@@ -1,7 +1,7 @@
 'use strict';
 
-import config from './config.js';
-const helper = new config();
+import helperFunc from './helper.js';
+const helper = new helperFunc();
 
 export default class Utilities{
   toggleNav(e){
@@ -125,6 +125,7 @@ export default class Utilities{
     if(current.is_day === 0){
       sky.style.backgroundImage = `url('/assets/img/night.jpg')`;
     }
+    helper.saveWeatherData('currentForecast', html)
   }
 
   renderFutureForecast(data, today){

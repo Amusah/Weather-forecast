@@ -1,4 +1,4 @@
-export default class Config {
+export default class helper {
    parseDate(dateString){
     const [localDate, localTime] = dateString.split(' ');
     // convert date to day name
@@ -10,6 +10,12 @@ export default class Config {
     const time = new Date(`${localDate} ${localTime}`).toLocaleTimeString('en-US', 
     {timeZone: 'UTC', hour12:true, hour: 'numeric', minute: 'numeric'});
 
-    return {day, time}
+    return {day, time};
   }
+
+  saveWeatherData(key, data){
+    localStorage.setItem(key, JSON.stringify(data))
+  }
+
+  loadWeatherData(key){}
 }
