@@ -5,6 +5,7 @@ import helperFunc from './helper.js';
 
 
 const navBar = document.querySelector('.navbar');
+const input = document.querySelector('.city-input');
 
 // const navToggler = navBar.querySelector('.nav-toggler');
 
@@ -20,6 +21,9 @@ class App {
 
   constructor(){
     navBar.addEventListener('click', utils.toggleNav);
+    input.addEventListener('input', helper.debounce(() => {
+      console.log('typed');
+    }))
   }
 
   fetchAndParseData(url, errMsg = 'Something went wrong'){
@@ -42,7 +46,7 @@ class App {
       console.log(latitude, longitude);
       utils.toggleSpinner();
       this.reverseGeocode(latitude, longitude)
-      .then(data => this.getWeatherForcast('Zamboanga'))
+      .then(data => this.getWeatherForcast(data.city))
       .then(weatherData => {
         const [currentForecast, futureForecast] = weatherData;
         console.log(currentForecast, futureForecast);
@@ -77,7 +81,7 @@ class App {
 }
 
 const weatherApp = new App();
-weatherApp.getCurrentLocation();
+// weatherApp.getCurrentLocation();
 // https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Takoradi?unitGroup=metric&key=TJJ852M4XXSA9Y5XRWETDERQK&contentType=json
 // 'TJJ852M4XXSA9Y5XRWETDERQK'
 

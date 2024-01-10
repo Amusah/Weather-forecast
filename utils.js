@@ -125,7 +125,7 @@ export default class Utilities{
     if(current.is_day === 0){
       sky.style.backgroundImage = `url('/assets/img/night.jpg')`;
     }
-    helper.saveWeatherData('currentForecast', html)
+    // helper.saveWeatherData('currentForecast', html)
   }
 
   renderFutureForecast(data, today){

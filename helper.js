@@ -18,4 +18,17 @@ export default class helper {
   }
 
   loadWeatherData(key){}
+
+  debounce(func, delay = 2000){
+    let timer;
+    
+    return function(...args){
+      if(timer)
+      clearTimeout(timer);
+
+      timer = setTimeout(() => {
+        func.apply(null, args);
+      }, delay);
+    }
+  }
 }
