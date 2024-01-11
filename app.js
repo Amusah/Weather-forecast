@@ -6,6 +6,8 @@ import helperFunc from './helper.js';
 
 const navBar = document.querySelector('.navbar');
 const input = document.querySelector('.city-input');
+const spinner = document.querySelector('.loading');
+const widgetContainer = document.querySelector('.autocomplete-container')
 
 // const navToggler = navBar.querySelector('.nav-toggler');
 
@@ -21,9 +23,33 @@ class App {
 
   constructor(){
     navBar.addEventListener('click', utils.toggleNav);
-    input.addEventListener('input', helper.debounce(() => {
-      console.log('typed');
-    }))
+    input.addEventListener('input', helper.debounce(this.inputEvent, 1000));
+    document.addEventListener('click', (e) => {
+      console.log(e.target);
+      if(e.target.closest('.city-list-item')){
+        console.log('yes')
+        console.log(e.target.firstChild.textContent)
+      }
+    });
+    // utils.initInput(input)
+  }
+
+  inputEvent(e){
+    let keyWord = e.target.value.trim();
+      if(!keyWord){
+        spinner.classList.add('hidden');
+      } else{
+        spinner.classList.remove('hidden');
+        console.log(keyWord)
+        utils.autoComplete(keyWord)
+        .then(data => utils.renderAutoCompleteWidget(data))
+        .catch(err => {
+          utils.throwError(err.message)
+        })
+        .finally(() => {
+          spinner.classList.add('hidden');
+        })
+      }
   }
 
   fetchAndParseData(url, errMsg = 'Something went wrong'){

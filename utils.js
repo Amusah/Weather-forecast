@@ -1,6 +1,9 @@
 'use strict';
 
 import helperFunc from './helper.js';
+
+// const spinner = document.querySelector('.loading');
+
 const helper = new helperFunc();
 
 export default class Utilities{
@@ -12,6 +15,49 @@ export default class Utilities{
       // console.log('clicked')
       navToggler.classList.toggle('toggle');
       navBar.classList.toggle('scale-nav');
+    }
+  }
+
+  // initInput(input){
+  //   input.addEventListener('input', helper.debounce(() => {
+  //     spinner.classList.remove('hidden');
+  //     console.log('typed');
+  //   }))
+  // }
+
+  // async inputEvent(e){
+  //     if(e.target.value === ''){
+  //       spinner.classList.add('hidden');
+  //     } else{
+  //       spinner.classList.remove('hidden');
+  //     }
+  //   }
+
+  autoComplete(keyWord){
+    return fetch(`http://api.weatherapi.com/v1/search.json?key=bbb40dd6bd47451d83f140902230306&q=${keyWord}`)
+    .then(res => {
+      if(!res.ok){
+        // this.throwError('city not found', res.status);
+        return;
+      }
+      return res.json();
+    })
+  }
+
+  renderAutoCompleteWidget(data){
+    const widgetContainer = document.querySelector('.autocomplete-container')
+    if(data){
+      data.forEach(data => {
+        const html = `
+          <h2 class="city-name">${data.name}</h2>
+          <p class="country-name">${data.country}</p>
+        `;
+        const listElement = document.createElement('li');
+        listElement.classList.add('city-list-item');
+        listElement.insertAdjacentHTML('beforeend', html);
+        widgetContainer.appendChild(listElement);
+        widgetContainer.classList.remove('hidden');
+      });
     }
   }
 
@@ -27,7 +73,10 @@ export default class Utilities{
       <p class="msg">${msg2 || ''}</p>
     `;
     messageBox.insertAdjacentHTML('beforeend', html);
-    messageBox.classList.toggle('hidden');
+    messageBox.classList.remove('hidden');
+    setTimeout(() => {
+      messageBox.classList.add('hidden');
+    }, 5000)
   }
 
   renderCurrentForecast(data){

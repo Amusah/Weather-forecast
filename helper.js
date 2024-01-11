@@ -1,3 +1,10 @@
+'use strict'
+
+const spinner = document.querySelector('.loading');
+// import Utilities from "./utils.js";
+
+// const utils = new Utilities();
+
 export default class helper {
    parseDate(dateString){
     const [localDate, localTime] = dateString.split(' ');
@@ -20,6 +27,7 @@ export default class helper {
   loadWeatherData(key){}
 
   debounce(func, delay = 2000){
+    // utils.toggleSpinner();
     let timer;
     
     return function(...args){
@@ -31,4 +39,17 @@ export default class helper {
       }, delay);
     }
   }
+
+  //  inputEvent(e){
+  //     if(e.target.value === ''){
+  //       spinner.classList.add('hidden');
+  //     } else{
+  //       spinner.classList.remove('hidden');
+  //       console.log(e.target.value)
+  //     }
+  //   }
+
+  // autoComplete(keyWord){
+  //   return fetch(`http://api.weatherapi.com/v1/search.json?key=bbb40dd6bd47451d83f140902230306&q=${keyWord}`)
+  // }
 }
