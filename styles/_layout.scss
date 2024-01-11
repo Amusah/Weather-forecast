@@ -120,10 +120,61 @@ main{
   .autocomplete-container{
     position: absolute;
     width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    @include background();
+    height: 25%;
+    padding-right: .5rem;
+    margin-top: .5rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    // @include background($alpha: 0.1);
+    overflow-y: auto;
+    scrollbar-width: auto;
+    scrollbar-color: rgba($white, 0.2);
+
+    &::-webkit-scrollbar {
+      width: .5rem;
+      /* width of the entire scrollbar */
+    }
+    &::-webkit-scrollbar-track {
+      // margin-left: 2rem;
+      @include background($color: $sky, $alpha: 0.3);
+      /* color of the tracking area */
+    }
+    &::-webkit-scrollbar-thumb {
+      @include background($alpha: 0.5);
+      /* color of the scroll thumb */
+      border-radius: 2rem;
+      /* roundness of the scroll thumb */
+      // border: 1rem solid rgba($white, 0.2);
+      /* creates padding around scroll thumb */
+    }
+    
+
+    .city-list-item{
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding: 1rem;
+      width: 100%;
+      height: 30%;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      @include background();
+
+      &:hover{
+        border: 0.1rem solid $white;
+      }
+
+      .city-name{
+        @include font-xsm(600, $color: $white);
+        font-size: 2rem;
+        letter-spacing: .1rem;
+      }
+      .country-name{
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: darken($white, 10);
+      }
+    }
   }
   /************ Current weather info ***********/
   .current-weather-info{
