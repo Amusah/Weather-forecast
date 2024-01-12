@@ -129,6 +129,7 @@ main{
     overflow-y: auto;
     scrollbar-width: auto;
     scrollbar-color: rgba($white, 0.2);
+    z-index: 5;
 
     &::-webkit-scrollbar {
       width: .5rem;
@@ -164,12 +165,12 @@ main{
         border: 0.1rem solid $white;
       }
 
-      .city-name{
+      .city-name__text{
         @include font-xsm(600, $color: $white);
         font-size: 2rem;
         letter-spacing: .1rem;
       }
-      .country-name{
+      .country-name__text{
         font-size: 1.5rem;
         font-weight: 400;
         color: darken($white, 10);
@@ -182,11 +183,11 @@ main{
     display: flex;
     justify-content: space-between;
     min-height: 25vh;
-    transition: all 2s ease-in;
+    // transition: all 2s ease-in;
 
     .current-weather-info__text{
       padding: 4rem;
-      transition: transform 2s ease-in;
+      // transition: transform 2s ease-in;
       .city-name{
         @include font-md(600, $color: $white);
       }

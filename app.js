@@ -7,7 +7,9 @@ import helperFunc from './helper.js';
 const navBar = document.querySelector('.navbar');
 const input = document.querySelector('.city-input');
 const spinner = document.querySelector('.loading');
-const widgetContainer = document.querySelector('.autocomplete-container')
+const widgetContainer = document.querySelector('.autocomplete-container');
+const currentCondition = document.querySelector('.current-weather-info');
+// const cityName = document.querySelector('.city-name__text');
 
 // const navToggler = navBar.querySelector('.nav-toggler');
 
@@ -23,33 +25,64 @@ class App {
 
   constructor(){
     navBar.addEventListener('click', utils.toggleNav);
-    input.addEventListener('input', helper.debounce(this.inputEvent, 1000));
-    document.addEventListener('click', (e) => {
-      console.log(e.target);
-      if(e.target.closest('.city-list-item')){
-        console.log('yes')
-        console.log(e.target.firstChild.textContent)
-      }
-    });
+    input.addEventListener('input', helper.debounce(this.inputEvent.bind(this), 1000));
+    this.getCurrentLocation();
+    // document.addEventListener('click', e => {
+
+    // })
     // utils.initInput(input)
   }
 
   inputEvent(e){
-    let keyWord = e.target.value.trim();
-      if(!keyWord){
+  let keyWord = e.target.value.trim();
+    if(!keyWord){
+      spinner.classList.add('hidden');
+    } else{
+      spinner.classList.remove('hidden');
+      currentCondition.classList.add('opaque');
+      console.log(keyWord)
+      utils.autoComplete(keyWord)
+      .then(data => {
+        utils.renderAutoCompleteWidget(data);
+        document.addEventListener('click', this.clickEvent.bind(this));
+      })
+      .catch(err => {
+        utils.throwError(err.message)
+        console.log(err)
+      })
+      .finally(() => {
         spinner.classList.add('hidden');
-      } else{
-        spinner.classList.remove('hidden');
-        console.log(keyWord)
-        utils.autoComplete(keyWord)
-        .then(data => utils.renderAutoCompleteWidget(data))
-        .catch(err => {
-          utils.throwError(err.message)
-        })
-        .finally(() => {
-          spinner.classList.add('hidden');
-        })
-      }
+      })
+    }
+  }
+
+  clickEvent(e){
+    const { target } = e;
+    let cityName;
+    if(target.matches('.city-list-item, .city-name__text, .country-name__text')){
+      cityName = target.closest('.city-list-item').children[0].innerText;
+      input.value = cityName;
+      widgetContainer.classList.add('hidden');
+      spinner.classList.remove('hidden');
+      // console.log(cityName);
+      this.getWeatherForcast(cityName)
+      .then(weatherData => {
+        const [currentForecast, futureForecast] = weatherData;
+        console.log(currentForecast, futureForecast);
+        utils.renderCurrentForecast(currentForecast);
+        utils.renderFutureForecast(futureForecast, currentForecast);
+        spinner.classList.add('hidden');
+        currentCondition.classList.remove('opaque');
+        input.value = '';
+      })
+      // .catch(err => utils.throwError(err.message))
+      // .finally(() => {
+      //   spinner.classList.add('hidden');
+      //   currentCondition.classList.remove('opaque');
+      // })
+    } else{
+      widgetContainer.classList.add('hidden');
+    }
   }
 
   fetchAndParseData(url, errMsg = 'Something went wrong'){

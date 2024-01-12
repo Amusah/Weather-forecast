@@ -49,8 +49,8 @@ export default class Utilities{
     if(data){
       data.forEach(data => {
         const html = `
-          <h2 class="city-name">${data.name}</h2>
-          <p class="country-name">${data.country}</p>
+          <h2 class="city-name__text">${data.name}</h2>
+          <p class="country-name__text">${data.country}</p>
         `;
         const listElement = document.createElement('li');
         listElement.classList.add('city-list-item');
@@ -72,11 +72,12 @@ export default class Utilities{
       <h2 class="msg-head">${msg1}</h2>
       <p class="msg">${msg2 || ''}</p>
     `;
+    messageBox.replaceChildren();
     messageBox.insertAdjacentHTML('beforeend', html);
     messageBox.classList.remove('hidden');
     setTimeout(() => {
       messageBox.classList.add('hidden');
-    }, 5000)
+    }, 7000)
   }
 
   renderCurrentForecast(data){
@@ -167,7 +168,7 @@ export default class Utilities{
         </div>
       </div>
     `];
-
+    [currentCondition, dayForecast, airCondition].forEach(el => el.replaceChildren());
     currentCondition.insertAdjacentHTML('beforeend', html[0]);
     dayForecast.insertAdjacentHTML('beforeend', html[1]);
     airCondition.insertAdjacentHTML('beforeend', html[2]);
@@ -234,6 +235,7 @@ export default class Utilities{
         <p class="future-forecast__temp">${Math.floor(days[6].temp)}&deg;</p>
       </div>
     `
+    futureForecast.replaceChildren();
     futureForecast.insertAdjacentHTML('beforeend', html);
   }
   
