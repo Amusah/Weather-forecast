@@ -23,7 +23,7 @@ class App {
   constructor(){
     navBar.addEventListener('click', utils.toggleNav);
     input.addEventListener('input', helper.debounce(this.inputEvent.bind(this), 1000));
-    // this.getCurrentLocation();
+    this.getCurrentLocation();
   }
 
   inputEvent(e){
