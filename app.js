@@ -102,6 +102,9 @@ class App {
         console.log(err.message)
         utils.throwError(err.message, 'Something went wrong')
       })
+      .finally(() => {
+        spinner.classList.add('hidden');
+      })
       
     }, (err) => {
       if(err)
