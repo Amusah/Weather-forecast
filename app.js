@@ -9,9 +9,6 @@ const input = document.querySelector('.city-input');
 const spinner = document.querySelector('.loading');
 const widgetContainer = document.querySelector('.autocomplete-container');
 const currentCondition = document.querySelector('.current-weather-info');
-// const cityName = document.querySelector('.city-name__text');
-
-// const navToggler = navBar.querySelector('.nav-toggler');
 
 const utils = new Utilities();
 const helper = new helperFunc();
@@ -20,27 +17,23 @@ class App {
   #apiKeys = {
     currentForecastApi: 'bbb40dd6bd47451d83f140902230306',
     futureForecastApi : 'TJJ852M4XXSA9Y5XRWETDERQK',
-    geoCodeApi : '788221805148350681091x86622'
+    geoCodeApi : '394165843608160291545x9264'
   }
 
   constructor(){
     navBar.addEventListener('click', utils.toggleNav);
     input.addEventListener('input', helper.debounce(this.inputEvent.bind(this), 1000));
-    this.getCurrentLocation();
-    // document.addEventListener('click', e => {
-
-    // })
-    // utils.initInput(input)
+    // this.getCurrentLocation();
   }
 
   inputEvent(e){
   let keyWord = e.target.value.trim();
     if(!keyWord){
       spinner.classList.add('hidden');
+      currentCondition.classList.remove('opaque');
     } else{
       spinner.classList.remove('hidden');
       currentCondition.classList.add('opaque');
-      console.log(keyWord)
       utils.autoComplete(keyWord)
       .then(data => {
         utils.renderAutoCompleteWidget(data);
@@ -64,22 +57,15 @@ class App {
       input.value = cityName;
       widgetContainer.classList.add('hidden');
       spinner.classList.remove('hidden');
-      // console.log(cityName);
       this.getWeatherForcast(cityName)
       .then(weatherData => {
         const [currentForecast, futureForecast] = weatherData;
-        console.log(currentForecast, futureForecast);
         utils.renderCurrentForecast(currentForecast);
         utils.renderFutureForecast(futureForecast, currentForecast);
         spinner.classList.add('hidden');
         currentCondition.classList.remove('opaque');
         input.value = '';
-      })
-      // .catch(err => utils.throwError(err.message))
-      // .finally(() => {
-      //   spinner.classList.add('hidden');
-      //   currentCondition.classList.remove('opaque');
-      // })
+      });
     } else{
       widgetContainer.classList.add('hidden');
     }
@@ -96,7 +82,6 @@ class App {
   }
 
   getCurrentLocation(){
-    let currentCity;
     if(!navigator.geolocation) return;
 
     navigator.geolocation.getCurrentPosition(pos => {
@@ -140,12 +125,3 @@ class App {
 }
 
 const weatherApp = new App();
-// weatherApp.getCurrentLocation();
-// https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Takoradi?unitGroup=metric&key=TJJ852M4XXSA9Y5XRWETDERQK&contentType=json
-// 'TJJ852M4XXSA9Y5XRWETDERQK'
-
-// goecode api
-// '788221805148350681091x86622'
-// 'https://geocode.xyz/51.50354,-0.12768?geoit=xml&auth=your_api_key'
-// http://api.weatherapi.com/v1/current.json?key=bbb40dd6bd47451d83f140902230306&q=Takoradi&aqi=no
-

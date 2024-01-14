@@ -23,8 +23,7 @@
           flex-direction: column;
           align-items: center;
           cursor: pointer;
-          // height: 10rem;
-  
+
           svg {
             width: 3.5rem;
             height: 4rem;
@@ -211,28 +210,12 @@
   
       /*********** Today's forecast ***********/
       .day-forecast {
-        // min-height: 20vh;
   
         .day-forecast__text {
           font-size: 1.6rem;
         }
   
-        .day-forecast__container {
-          // display: flex;
-          // justify-content: space-evenly;
-          // align-items: center;
-          // padding: 0 2rem;
-        }
-  
         .day-forecast__data {
-          // text-align: center;
-          // padding-right: 0 2rem;
-          // width: 16.7%;
-  
-          // &:not(:last-child) {
-          //   border-right: 1px solid $white;
-          // }
-  
           .day-forecast__time {
             font-size: 1.4rem;
           }
@@ -255,25 +238,7 @@
           font-size: 1.6rem;
         }
   
-        // .air-conditions__container {
-        //   // display: flex;
-        //   // justify-content: space-between;
-        //   // align-items: center;
-        //   // // padding: 0 2rem;
-        //   // width: 90%;
-        //   // margin: 0 auto;
-        // }
-  
         .air-conditions__data {
-  
-          // .reel-feel__info-box,
-          // .chance-of-rain__info-box,
-          // .wind-speed__info-box,
-          // .uv-index__info-box {
-          //   display: flex;
-          //   align-items: center;
-          //   // width: 100%;
-          // }
   
           .thermometer__icon,
           .rain__icon,
@@ -331,14 +296,6 @@
 @media screen and (max-width: 700px) {
 
   .navbar {
-    // height: 82vh;
-
-    // .nav-logo {
-
-    //   img {
-    //     width: 4.5rem;
-    //   }
-    // }
 
     .nav-links {
 
@@ -352,14 +309,6 @@
         .nav-link__text {
           font-size: 1.4rem;
         }
-
-        // &:hover .nav-link__text {
-        //   color: darken($white, 20);
-        // }
-
-        // &:hover svg {
-        //   @include svg-hover();
-        // }
       }
     }
   }
@@ -539,17 +488,14 @@
         display: block;
         text-align: center;
         .current-weather-info__text {
-          // padding: 2.5rem;
   
           .current-temp {
-            // font-size: 4.3rem;
             padding: 1.5rem 0;
           }
         }
   
         .current-weather-info__icon {
           display: none;
-          // width: 14rem;
           &-1{
             display: block;
             width: 15rem;
@@ -561,10 +507,7 @@
       /*********** Today's forecast ***********/
       .day-forecast {
         min-height: 25vh;
-        // .day-forecast__text {
-        //   font-size: 1.5rem;
-        // }
-  
+
         .day-forecast__container {
           padding: 0;
           justify-content: space-around;
@@ -590,16 +533,13 @@
   
       /********** Air conditions ***********/
       .air-conditions{
-        // padding: 2rem 1.5rem;
         .air-conditions__text{
           font-size: 1.5rem;
           padding: 1rem 0;
         }
 
         .air-conditions__container{
-          // justify-content: space-evenly;
           align-items: center;
-          // padding: 0 2rem;
           width: 90%;
           margin: 0 auto;
         }

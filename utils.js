@@ -12,32 +12,15 @@ export default class Utilities{
     const navToggler = navBar.querySelector('.nav-toggler');
     const { target } = e;
     if(target.classList.contains('nav-toggler') || target.classList.contains('nav-toggler__icon')){
-      // console.log('clicked')
       navToggler.classList.toggle('toggle');
       navBar.classList.toggle('scale-nav');
     }
   }
 
-  // initInput(input){
-  //   input.addEventListener('input', helper.debounce(() => {
-  //     spinner.classList.remove('hidden');
-  //     console.log('typed');
-  //   }))
-  // }
-
-  // async inputEvent(e){
-  //     if(e.target.value === ''){
-  //       spinner.classList.add('hidden');
-  //     } else{
-  //       spinner.classList.remove('hidden');
-  //     }
-  //   }
-
   autoComplete(keyWord){
     return fetch(`http://api.weatherapi.com/v1/search.json?key=bbb40dd6bd47451d83f140902230306&q=${keyWord}`)
     .then(res => {
       if(!res.ok){
-        // this.throwError('city not found', res.status);
         return;
       }
       return res.json();
@@ -87,7 +70,6 @@ export default class Utilities{
     const sky = document.getElementById('bg');
     const { location, current, forecast } = data;
     const hourlyForecast = forecast.forecastday[0]?.hour;
-    // console.log(hourlyForecast);
     let date = helper.parseDate(location.localtime);
     let html = [`
       <div class="current-weather-info__text">
@@ -175,7 +157,6 @@ export default class Utilities{
     if(current.is_day === 0){
       sky.style.backgroundImage = `url('/assets/img/night.jpg')`;
     }
-    // helper.saveWeatherData('currentForecast', html)
   }
 
   renderFutureForecast(data, today){

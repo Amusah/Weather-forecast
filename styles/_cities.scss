@@ -222,62 +222,13 @@
 
 // Responsive layout
 @media screen and (max-width: 860px){
-  .city-list {
-    // margin-top: 2rem;
-    // overflow-y: auto;
-    // max-height: 80%;
-    // // padding-right: 2rem;
-    // scrollbar-width: 1rem;
-    // /* "auto" or "thin" */
-    // scrollbar-color: rgba($white, 0.2);
-    // /* scroll thumb and track */
-
-    // &::-webkit-scrollbar {
-    //   width: 0.5rem;
-    //   /* width of the entire scrollbar */
-    // }
-
-    // &::-webkit-scrollbar-track {
-    //   // margin-left: 2rem;
-    //   @include background($color: $sky, $alpha: 0.3);
-    //   /* color of the tracking area */
-    // }
-
-    // &::-webkit-scrollbar-thumb {
-    //   @include background($alpha: 0.5);
-    //   /* color of the scroll thumb */
-    //   border-radius: 2rem;
-    //   /* roundness of the scroll thumb */
-    //   // border: 1rem solid rgba($white, 0.2);
-    //   /* creates padding around scroll thumb */
-    // }
-  }
-
   .city-list__item {
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
-    // border-radius: 2rem;
-    // padding: 1.5rem 2rem;
-    // cursor: pointer;
-    // transition: all .1s ease-in;
-    // @include background();
 
     &:not(:first-child) {
       margin-top: 1.5rem;
     }
 
-    // &:hover {
-    //   // box-shadow: 0 0.1rem 0.1rem 0.1rem $white;
-    //   transform: translateY(-.3rem);
-    // }
-
     .city-weather__data {
-      // width: 50%;
-      // display: flex;
-      // // justify-content: space-between;
-      // align-items: center;
-      // gap: 5rem;
 
       .city-weather__icon {
         width: 7rem;
@@ -351,9 +302,6 @@
       text-align: center;
 
       .city-day-forecast__text {
-        // text-transform: uppercase;
-        // letter-spacing: .1rem;
-        // @include font-xsm(500, $color: $white);
         padding: 1.8rem 0;
       }
 
@@ -361,14 +309,11 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        // margin: 0 auto;
-        // padding: 0 2rem;
       }
 
       .city-day-forecast__data {
         text-align: center;
         padding: 0;
-        // padding-right: 1.5rem;
         width: 30%;
         margin: 0 auto;
 
@@ -394,16 +339,10 @@
     .city-future-forecast {
       text-align: center;
       .city-future-forecast__text {
-        // text-transform: uppercase;
-        // letter-spacing: .1rem;
         padding: 1.5rem 0;
-        // @include font-xsm(500, $color: $white);
       }
 
       .city-future-forecast__container {
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-evenly;
         gap: 1rem;
 
         .city-future-forecast__data {
