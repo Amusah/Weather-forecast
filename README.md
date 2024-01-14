@@ -19,3 +19,6 @@ open with [vs code](https://code.visualstudio.com/) or your prefered text.
 
 pull up your terminal, navigate into the project's directory and run `npm install` to install the necessary dependencies.
 Finally open with live server to preview it locally.
+
+>[!NOTE]
+> As a result of limited access to API resources, I was unable to implement all features as listed on the nav bar.
