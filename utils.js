@@ -28,7 +28,7 @@ export default class Utilities{
   }
 
   renderAutoCompleteWidget(data){
-    const widgetContainer = document.querySelector('.autocomplete-container')
+    const widgetContainer = document.querySelector('.autocomplete-container');
     if(data){
       data.forEach(data => {
         const html = `
@@ -156,6 +156,8 @@ export default class Utilities{
     airCondition.insertAdjacentHTML('beforeend', html[2]);
     if(current.is_day === 0){
       sky.style.backgroundImage = `url('/assets/img/night.jpg')`;
+    } else{
+      sky.style.backgroundImage = `url('/assets/img/day.jpg')`;
     }
   }
 
