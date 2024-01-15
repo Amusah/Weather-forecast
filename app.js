@@ -55,6 +55,7 @@ class App {
     if(target.matches('.city-list-item, .city-name__text, .country-name__text')){
       cityName = target.closest('.city-list-item').children[0].innerText;
       input.value = cityName;
+      widgetContainer.replaceChildren();
       widgetContainer.classList.add('hidden');
       spinner.classList.remove('hidden');
       this.getWeatherForcast(cityName)
